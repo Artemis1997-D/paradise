@@ -5,8 +5,8 @@
     ?>
     <h1>Une collection unique d'îles paradisiaques</h1>
     <p>Découvrez nos offres d’îles paradisiaques
-qui n’attendent que leurs
-futurs propriétaires</p>
+        qui n’attendent que leurs
+        futurs propriétaires</p>
 </header>
 
 <section>
