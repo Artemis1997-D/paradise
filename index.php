@@ -3,9 +3,24 @@
 include 'config/template/head.php'; ?>
 
 <header>
-    <?php include 'config/template/nav.php'; ?>
+    
+    <?php 
+    include 'config/template/head.php';
+    ?>
 </header>
-<h2 class="text-center mt-5 mb-5">Page d'accueil</h2>
-<hr>
+<body>
+<div>
+<h1>Une collection unique d'îles paradisiaques</h1>
+</div>
+
+
+
+
+
+<h2>Pourquoi choisir Paradise ?</h2>
+
+
+
+</body>
 <?php include 'config/template/footer.php'; ?>
 
