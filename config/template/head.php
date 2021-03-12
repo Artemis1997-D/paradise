@@ -20,5 +20,6 @@
 
 <?php
 require 'config/init.php';
+include 'nav.php';
 ?>
 

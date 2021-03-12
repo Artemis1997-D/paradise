@@ -4,5 +4,4 @@
     <a class="nav-link" href="login.php">Connexion</a>
     <a class="nav-link" href="panier.php">Mon panier</a>
     <a class="nav-link" href="profil.php">Mon compte</a>
-    
 </nav>
