@@ -8,6 +8,6 @@ include 'config/template/head.php';
     <?php include 'config/template/nav.php'; ?>
 </header>
 
-<h2 class="text-center mt-5 mb-5">Page fiche produit</h2>
+<h3 class="text-center mt-5 mb-5">Page fiche produit</h3>
 <hr>
 <?php include 'config/template/footer.php'; ?>
