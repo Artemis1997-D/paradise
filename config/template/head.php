@@ -1,3 +1,9 @@
+<?php
+require 'config/init.php';
+include 'nav.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,8 +24,4 @@
 
 </html>
 
-<?php
-require 'config/init.php';
-include 'nav.php';
-?>
 
