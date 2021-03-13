@@ -1,6 +1,7 @@
 <hr>
 <footer>
     <a class="nav-link" href="produits.php">Produits</a>
+    <a class="nav-link" href="profil_admin.php">Admin</a>
     <div>
     <a class="nav-link" href="inscription.php">Inscription</a>
     <a class="nav-link" href="login.php">Connexion</a>
