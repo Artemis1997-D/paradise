@@ -1,0 +1,78 @@
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+#home{
+  width: 40%;
+  text-align: left;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+}
+
+nav{
+  align-items: center;
+}
+
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+
+h2{
+  text-align: center;
+}
+
+header{
+  text-align: center;
+}
+
+.produits{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 10% auto;
+}
+
+
+
+#choisir-paradise p{
+  width: 50%;
+}
+
+#choisir-paradise-content{
+  width: 80%;
+  margin: auto;
+}
+
+.connexion-inscription{
+  width: 40%;
+  margin: auto;
+  padding: 5%;
+  border: solid 1px;
+}
+
+footer {
+  display: flex;
+  justify-content:space-around;
+}
+
