@@ -1,29 +1,35 @@
 /*------Styles généraux et head-------- */
 
-body{
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 
 }
-a:hover{
-  text-decoration: none;
+
+
+a {
+  color: #44444C;
 }
 
-header{
+header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   text-align: center;
-  
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  box-shadow: 0px 1px 10px #999;
+  z-index: 1;
 }
 
-nav{
+nav {
   align-items: center;
 }
 
-.hero{
+.hero {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -37,29 +43,34 @@ h2{
 }
 
 
-/*---------Style page d'accueil--------- */
+/*---------Home(index)--------- */
 
 
-#home{
+#home {
   width: 40%;
   text-align: left;
 }
 
 
-#hero-home{
+#hero-home {
   background-image: url("../img/hero-accueil.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color:white;
 }
 
-.produits{
+.produits {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 80%;
   margin: 10% auto;
 }
+
+.produits a {
+  color: white;
+}
+
 #arrow{
   width: 5%;
   height: 5%;
@@ -109,6 +120,7 @@ h2{
 #hero-inscription {
   background-image: url("../img/hero-inscription.jpg");
   background-size: cover;
+  height: 150vh;
 }
 
 /*-----profil administrateur-----*/
@@ -118,7 +130,7 @@ h2{
   justify-content: space-evenly;
 }
 
-.formulaire-ajout-article{
+.formulaire-ajout-article {
   margin: auto;
   padding: 5%;
 }
@@ -130,9 +142,10 @@ td {
 }
 /*----Footer----*/
 footer {
-  margin: 3%;
+  padding: 3%;
   display: flex;
   justify-content:space-around;
-  
+  background: linear-gradient(180deg, rgba(192,248,253,1) 25%, rgba(248,239,215,1) 75%);
+
 }
 

@@ -12,7 +12,8 @@
     <input type="password" class="form-control" id="mdp" placeholder="Entrez votre mot de passe">
   </div>
   <button type="submit" class="btn btn-primary">Se connecter</button>
-  <p> Vous n'avez pas de compte ? <a href="inscription.php">Inscrivez vous</a>
+  <p><a href="#">Mot de passe oublié</a>
+  <p> Nouveau chez Paradise ? <a href="inscription.php">Inscrivez vous</a>
 </form>
 </section>
 <?php include 'config/template/footer.php'; ?>

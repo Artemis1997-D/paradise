@@ -6,7 +6,7 @@ include 'config/template/head.php';
 </header>
 <section class="hero-produit">
 
-<h3 class="text-center mt-5 mb-5">Page fiche produit</h3>
+<h3 class="text-center mt-5 mb-5">Page fiche produit 1</h3>
 </section>
 <section>
 <div class="container-img">
