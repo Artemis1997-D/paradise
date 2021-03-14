@@ -1,6 +1,6 @@
 <?php include 'config/template/head.php'; ?>
 </header>
-<section class="hero">
+<section class="hero" id="hero-login">
 <form class="connexion-inscription">
 <h2 class="text-center mt-5 mb-5">Connexion</h2>
 <div class="form-group">

@@ -1,4 +1,3 @@
-<hr>
 <footer>
     <a class="nav-link" href="produits.php">Produits</a>
     <a class="nav-link" href="profil_admin.php">Admin</a>
