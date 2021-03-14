@@ -7,6 +7,7 @@
     <p>Découvrez nos offres d’îles paradisiaques
         qui n’attendent que leurs
         futurs propriétaires</p>
+        <img id="arrow" src="../paradise/asset/img/down-arrow.svg">
     </section>
 
 
@@ -19,6 +20,7 @@
       <h6 class="card-title">Panama</h6>
       <p class="card-text">290 m2</p>
       <p class="card-text">295 812€</p>
+      <button type="button" class="btn btn-info">Voir</button>
     </div>
   </div>
   <div class="card">
@@ -28,6 +30,7 @@
       <h6 class="card-title">Caymant Island</h6>
       <p class="card-text">3 700 m2</p>
       <p class="card-text">4 287 228€</p>
+      <button type="button" class="btn btn-info">Voir</button>
     </div>
   </div>
   <div class="card">
@@ -37,6 +40,7 @@
       <h6 class="card-title">Thaïlande</h6>
       <p class="card-text">2 000 m2</p>
       <p class="card-text">595 309€</p>
+      <button type="button" class="btn btn-info">Voir</button>
     </div>
   </div>
 </div>

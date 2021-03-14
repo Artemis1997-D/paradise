@@ -1,17 +1,13 @@
+/*------Styles généraux et head-------- */
+
 body{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 
 }
-
 a:hover{
   text-decoration: none;
-}
-
-#home{
-  width: 40%;
-  text-align: left;
 }
 
 header{
@@ -19,13 +15,13 @@ header{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  text-align: center;
   
 }
 
 nav{
   align-items: center;
 }
-
 
 .hero{
   display: flex;
@@ -36,19 +32,25 @@ nav{
 
 }
 
+h2{
+  text-align: center;
+}
+
+
+/*---------Style page d'accueil--------- */
+
+
+#home{
+  width: 40%;
+  text-align: left;
+}
+
+
 #hero-home{
   background-image: url("../img/hero-accueil.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color:white;
-}
-
-h2{
-  text-align: center;
-}
-
-header{
-  text-align: center;
 }
 
 .produits{
@@ -57,6 +59,12 @@ header{
   justify-content: space-evenly;
   width: 80%;
   margin: 10% auto;
+}
+#arrow{
+  width: 5%;
+  height: 5%;
+  margin: 0 auto;
+  
 }
 
 #choisir-paradise {
@@ -76,7 +84,6 @@ header{
 }
 
 
-
 /*-----Login----*/
 .login {
   display: flex;
@@ -94,8 +101,7 @@ header{
 .connexion-inscription {
   width: 40%;
   margin: auto;
-  padding: 5%;
-  border: solid 1px;
+  padding: 3%;
   background-color: white;
 }
 
@@ -127,5 +133,6 @@ footer {
   margin: 3%;
   display: flex;
   justify-content:space-around;
+  
 }
 
