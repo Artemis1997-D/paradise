@@ -5,9 +5,15 @@ include 'config/template/head.php';
 ?>
 </header>
 <section id="hero-produit2">
-
 </section>
-
+<section>
+  <div class="img-container">
+  </div>
+  <div class="img-container">
+  </div>
+  <div class="img-container">
+  </div>
+</section>
 <section>
   <blockquote>
   “Le bonheur n’est pas une destination 
