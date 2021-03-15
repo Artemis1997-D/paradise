@@ -7,14 +7,7 @@ include 'config/template/head.php';
 <section id="hero-produit2">
 
 </section>
-<section>
-<div class="container-img">
-</div>
-<div class="container-img">
-</div>
-<div class="container-img">
-</div>
-</section>
+
 <section>
   <blockquote>
   “Le bonheur n’est pas une destination 

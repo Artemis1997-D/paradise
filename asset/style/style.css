@@ -53,7 +53,7 @@ h2{
 
 
 #hero-home {
-  background-image: url("../img/hero-accueil.jpg");
+  background-image: url("../img/hero-home.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color:white;
@@ -87,7 +87,7 @@ h2{
 }
 
 #choisir-paradise {
-  background-image: url("../img/section-accueil.jpg");
+  background-image: url("../img/section-home.jpg");
   background-size: cover;
   height: 100vh;
   padding: 5%;
@@ -122,6 +122,8 @@ h2{
   height: 100vh;
 }
 
+
+
 /*-----Login----*/
 .login {
   display: flex;
@@ -147,12 +149,25 @@ h2{
 
 #hero-login,
 #hero-inscription {
-  background-image: url("../img/hero-inscription.jpg");
+  background-image: url("../img/hero-connexion.jpg");
   background-size: cover;
   height: 150vh;
 }
 
-/*-----profil administrateur-----*/
+/*-----Profil membre------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----Profil administrateur-----*/
 .admin-profil {
   display: flex;
   flex-direction: row;
