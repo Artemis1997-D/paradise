@@ -1,5 +1,6 @@
 <?php include 'config/template/head.php'; ?>
 </header>
+<div class="gestion-ajout">
 
 <h2>Bienvenue Jacques</h2>
 
@@ -33,7 +34,7 @@
             <input type="text" class="localisation-article" name="" id="ExampleLocalisation" placeholder="Entrez la localisation du produit">
         </div>
         <div class="form-group">
-            <label for="ExampleSuperficie">Superficie</label>
+            <label for="ExampleSuperficie">Superficie(m2)</label>
             <input type="number" class="superficie-article" name="" id="ExampleSuperficie" placeholder="Entrez la superficie du produit">
         </div>
         <div class="form-group">
@@ -50,7 +51,8 @@
 
 </div>
 
-<a href="deconnexion.php">Déconnexion</a>
+<a  href="deconnexion.php">Déconnexion</a>
+</div>
 
 
 <?php include 'config/template/footer.php'; ?>
