@@ -1,16 +1,15 @@
 <?php include 'config/template/head.php'; ?>
 </header>
-<h2>Bienvenue</h2>
-<h2>Jacques</h2>
-<section class="login">
+
+<section class="member-profil">
+    <h2>Bienvenue Jacques</h2>
+    <div class="card">
     <h3> Vos coordonnées</h3>
     <hr>
     <div class="coordonnees">
         <div>
         <h3>Adresse postale</h3>
-        <p>4 rue des fleurs</p>
-        <p>94790</p>
-        <p>La ville fleurie
+        <p>4 rue des fleurs, <br>94790<br>La ville fleurie<br></p>
         </div>
         <div>
         <h3>Adresse email</h3>
@@ -21,8 +20,9 @@
         <p>06 78 44 65 09</p>
         </div> 
     </div>
+    
+    </div>
     <a href="deconnexion.php">Déconnexion</a>
-
 </section>
 
 
