@@ -21,7 +21,7 @@ header {
   position: sticky;
   top: 0px;
   background-color: white;
-  box-shadow: 0px 3px 10px black;
+  box-shadow: 0px 1px 10px black;
   z-index: 1;
 }
 
@@ -122,6 +122,17 @@ h2{
   background-image: url(../img_produit/dream-thai-bungalow-big.jpg);
   background-size: cover;
   height: 100vh;
+}
+
+.images-produit {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 5% auto;
+
+
 }
 
 
