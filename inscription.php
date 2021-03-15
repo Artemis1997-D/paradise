@@ -13,6 +13,8 @@
     <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
   </div>
   </div>
+  <div class="dropdown">
+</div>
   <div class="form-group">
     <label for="mdp">Mot de passe</label>
     <input type="password" class="form-control" id="mdp" placeholder="Mot de passe">
