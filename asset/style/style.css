@@ -71,6 +71,14 @@ h2{
   color: white;
 }
 
+
+
+.perimeter-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 #arrow{
   width: 5%;
   height: 5%;
@@ -94,6 +102,25 @@ h2{
   margin: auto;
 }
 
+/*----------Fiche_produit 1/2/3*/
+
+#hero-produit1 {
+  background-image: url(../img_produit/isla-panama-big.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+#hero-produit2 {
+  background-image: url(../img_produit/sand-point-road-beach-big.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+#hero-produit3 {
+  background-image: url(../img_produit/dream-thai-bungalow-big.jpg);
+  background-size: cover;
+  height: 100vh;
+}
 
 /*-----Login----*/
 .login {
@@ -101,6 +128,8 @@ h2{
   flex-direction: column;
   align-items: center;
 }
+
+
 
 .coordonnees {
   display: flex;
@@ -127,6 +156,7 @@ h2{
 .admin-profil {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
@@ -135,6 +165,18 @@ h2{
   padding: 5%;
 }
 
+.formulaire-ajout-article input {
+  width: 100%;
+}
+
+#deconnexion {
+  display: flex;
+  width: 68%;
+  padding: 5% 0;
+  margin: auto;
+
+
+}
 
 td {
   border: solid 1px;

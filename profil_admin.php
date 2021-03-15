@@ -26,20 +26,20 @@
             <input type="text" class="name-article" name="" id="ExampleArticle" placeholder="Entrer le nom de l'article">
         </div>
         <div class="form-group">
-            <label for="ExampleDescription">Description</label>
-            <input type="textarea" class="description-article" name="" id="ExampleDescription" placeholder="Présentez en quelques lignes le produit">
+            <label for="ExampleDescription">Description de l'article</label>
+            <input type="textarea" class="description-article" name="" id="ExampleDescription" placeholder="Présentez en quelques lignes l'article">
         </div>
         <div class="form-group">
             <label for="ExampleLocalisation">Localisation</label>
-            <input type="text" class="localisation-article" name="" id="ExampleLocalisation" placeholder="Entrez la localisation du produit">
+            <input type="text" class="localisation-article" name="" id="ExampleLocalisation" placeholder="Entrez la localisation de l'article">
         </div>
         <div class="form-group">
             <label for="ExampleSuperficie">Superficie</label>
-            <input type="number" class="superficie-article" name="" id="ExampleSuperficie" placeholder="Entrez la superficie du produit">
+            <input type="number" class="superficie-article" name="" id="ExampleSuperficie" placeholder="Entrez la superficie de l'article">
         </div>
         <div class="form-group">
             <label for="ExampleQuantity">Quantité</label>
-            <input type="number" class="quantity-article" name="" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
+            <input type="number" class="quantity-article" name="" id="ExampleQuantity" placeholder="Entrez la quantité souhaitée">
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>
 
@@ -51,7 +51,7 @@
 
 </div>
 
-<a href="deconnexion.php">Déconnexion</a>
+<a href="deconnexion.php" id="deconnexion">Déconnexion</a>
 
 
 <?php include 'config/template/footer.php'; ?>

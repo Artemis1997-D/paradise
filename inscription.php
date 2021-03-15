@@ -3,13 +3,15 @@
 <section class="hero" id="hero-inscription">
 <form class="connexion-inscription">
 <h2 class="text-center mt-5 mb-5">Inscription</h2>
-<div class="form-group">
+<div>
+<div class="form-group" >
     <label for="prenom">Prénom</label>
     <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom">
   </div>
   <div class="form-group">
     <label for="nom">Nom</label>
     <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
+  </div>
   </div>
   <div class="form-group">
     <label for="mdp">Mot de passe</label>
