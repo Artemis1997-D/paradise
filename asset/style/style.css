@@ -48,7 +48,6 @@ h2{
 
 
 
-
 /*---------Home(index)--------- */
 
 
@@ -208,11 +207,11 @@ blockquote {
    border: none;
 }
 
-/*-----Login----*/
+/*-----Login/Inscription----*/
 
 
 .connexion-inscription {
-  width: 40%;
+  width: 50%;
   margin: auto;
   padding: 3%;
   background-color: white;
