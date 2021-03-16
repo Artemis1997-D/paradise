@@ -4,10 +4,13 @@ include 'config/template/head.php';
 
 ?>
 </header>
-<section id="hero-produit3">
+<section id="hero-produit3" class="hero-produit">
+<h2>Dream Thaï Bungalow</h2>
+<a class="arrow" href="#images-produit3"><img src="../paradise/asset/img/down-arrow.svg"></a>
 </section>
-<section class="images-produit">
-<h3>Images de l'article</h3>
+<div class="content">
+<section class="images-produit" id="images-produit3">
+
 <div class="card-deck">
   <div class="card">
   <div>
@@ -33,19 +36,20 @@ include 'config/template/head.php';
   </blockquote>
 </section>
 
-<section>
-<div>
+<section class="bottom-content">
+<div class="description">
   <h4>Description du produit</h4>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac ipsum sit amet dolor volutpat fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec viverra ante in sodales rhoncus. Cras enim est, malesuada id lectus gravida, tempus posuere diam. 
   </p>
   </div>
-  <div>
+  <div class="panier">
     <p>Il reste 5 parcelles en stock</p>
     <input type="number" class="quantity-article" name="" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
     <p>295 812€</p>
     <button>Ajouter au panier</button>
   </div>
-
 </section>
+
+</div>
 <?php include 'config/template/footer.php'; ?>

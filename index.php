@@ -7,13 +7,13 @@
     <h4>Découvrez nos offres d’îles paradisiaques
         qui n’attendent que leurs
         futurs propriétaires</h4>
-        <a id="arrow" href="#produits"><img src="../paradise/asset/img/down-arrow.svg"></a>
+        <a class="arrow" href="#produits"><img src="../paradise/asset/img/down-arrow.svg"></a>
     </section>
 
 
 
 <section class="produits" id="produits">
-<h3>Nos meilleurs articles</h3>
+<h2>Nos meilleurs articles</h2>
 <div class="card-deck">
   <div class="card">
     <img class="card-img-top" src="../paradise/asset/img_produit/isla-panama.jpg" alt="Card image cap">
