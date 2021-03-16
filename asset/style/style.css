@@ -354,6 +354,12 @@ td {
   margin: auto;
 }
 
+.image-panier {
+  width: 100px;
+  height: 100px;
+  margin-right: 2%;
+}
+
 .detail {
   display: flex;
   flex-direction: row;
