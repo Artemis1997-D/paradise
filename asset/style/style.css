@@ -118,6 +118,27 @@ h2{
   margin: auto;
 }
 
+/*-----------Page Produits---------*/
+
+.liste-produit{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.produit-page-produit {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 5%;
+  margin: 5%;
+
+}
+
+.image-produit {
+  width: 400px;
+  height: 250px;
+}
+
 /*----------Fiche_produit 1/2/3*/
 
 .hero-produit {
@@ -388,6 +409,17 @@ h3 {
   width: 45%;
 }
 
+/*-----------Page Produits---------*/
 
+.produit-page-produit {
+  padding: 2%;
+  margin: 2%;
+
+}
+
+.image-produit {
+  width: 450px;
+  height: 300px;
+}
   
 }
