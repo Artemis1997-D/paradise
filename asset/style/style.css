@@ -1,5 +1,9 @@
 /*------Styles généraux et head-------- */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
