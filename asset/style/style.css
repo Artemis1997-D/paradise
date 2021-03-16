@@ -1,5 +1,9 @@
 /*------Styles généraux et head-------- */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -59,6 +63,15 @@ h2{
   background-size: cover;
   background-repeat: no-repeat;
   color:white;
+}
+
+#hero-home h2{
+  margin: 10% 0;
+}
+
+#hero-home h4{
+  width: 60%;
+  margin: 2% auto;
 }
 
 .produits {
@@ -176,12 +189,23 @@ blockquote {
 }
 
 .add-panier {
-  width: 25%;
+  width: 30%;
   
 }
 
-.add-panier input{
+.add-panier input {
   width: 100%;
+}
+
+.price {
+  margin: 4% 0;
+}
+
+.btn-panier {
+   background-color: #FF2B60;
+   font-weight: bold;
+   color: white;
+   border: none;
 }
 
 /*-----Login----*/

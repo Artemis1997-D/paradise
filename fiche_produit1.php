@@ -44,8 +44,8 @@ include 'config/template/head.php';
   <div class="add-panier">
     <p>Il reste 5 parcelles en stock</p>
     <input type="number" class="quantity-article" name="" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
-    <p>295 812€</p>
-    <button>Ajouter au panier</button>
+    <p class="price">295 812€</p>
+    <button class="btn-panier">Ajouter au panier</button>
 </div>
 </section>
 </div>
