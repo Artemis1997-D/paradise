@@ -48,7 +48,6 @@ h2{
 
 
 
-
 /*---------Home(index)--------- */
 
 
@@ -208,11 +207,11 @@ blockquote {
    border: none;
 }
 
-/*-----Login----*/
+/*-----Login/Inscription----*/
 
 
 .connexion-inscription {
-  width: 40%;
+  width: 50%;
   margin: auto;
   padding: 3%;
   background-color: white;
@@ -224,6 +223,37 @@ blockquote {
   background-image: url("../img/hero-inscription.jpg");
   background-size: cover;
   height: 150vh;
+}
+
+.btn-form {
+  margin: 5% 0;
+}
+
+#btn-login, 
+#btn-inscrire {
+  margin: 5% 0;
+}
+
+/*---------Login----------------*/
+
+
+
+
+
+
+/*---------Inscription----------------*/
+
+
+#name {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
+
+#prenom,
+#nom {
+  width: 100%;
 }
 
 /*-----Profil membre------------*/
