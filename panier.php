@@ -1,5 +1,6 @@
 <?php include 'config/template/head.php'; ?>
 </header>
+<section class="content">
 <h2 class="text-center mt-5 mb-5">Mes commandes</h2>
 <div class="panier">
   <div class="article">
@@ -19,7 +20,7 @@
   <p>Total</p>
   <p>3 967 989€</p>
 </div>
-
+</section>
 
 <?php include 'config/template/footer.php'; ?>
 

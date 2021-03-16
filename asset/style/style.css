@@ -340,7 +340,9 @@ td {
 }
 
 /*------Panier------*/
-
+.content {
+  height: 65vh;
+}
 .panier{
   display: flex;
   flex-direction: column;
