@@ -1,9 +1,5 @@
 /*------Styles généraux et head-------- */
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   box-sizing: border-box;
   margin: 0;
@@ -13,8 +9,7 @@ body {
 
 
 a {
-  color: blue;
-  outline: none;
+  color: #44444C;
 }
 
 header {
@@ -66,15 +61,6 @@ h2{
   color:white;
 }
 
-#hero-home h2 {
-  margin: 10%;
-}
-
-#hero-home h4 {
-  margin: 3% auto;
-  width: 40%;
-}
-
 .produits {
   display: flex;
   flex-wrap: wrap;
@@ -108,7 +94,6 @@ h2{
   background-size: cover;
   height: 100vh;
   padding: 5%;
-  color: black;
 
 }
 
@@ -117,7 +102,7 @@ h2{
 }
 
 #choisir-paradise-content {
-  width: 85%;
+  width: 80%;
   margin: auto;
 }
 
@@ -170,7 +155,6 @@ blockquote {
   margin: 5% auto;
   font-size: 30px;
 
-}
 
 .content {
   display: flex;
@@ -327,7 +311,7 @@ td {
 .total{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 
@@ -336,9 +320,17 @@ footer {
   padding: 3%;
   display: flex;
   justify-content:space-around;
-  background:  blanchedalmond;
+  background:  #F4ECC4;
 }
 
 footer a {
-  color: blue;
+  color: grey;
+}
+
+/*-------------------------------Desktop--------------------------*/
+@media (min-width: 877px) {
+
+
+
+  
 }
