@@ -226,41 +226,21 @@ blockquote {
   height: 150vh;
 }
 
-/*-----Profil membre------------*/
-
+/*---------Profil Membre----------*/
 .member-profil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2%;
-}
-
-.coordonnees {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  padding: 2%;
-  margin: 5%;
-  width: 70%;
+  padding: 5%;
 }
 
 h3 {
-  text-align: center;
+  margin: auto;
 }
 
+.coordonnees{
+  padding-left: 5%;
+}
 
+/*---------Profil Administrateur----------*/
 
-
-
-
-
-
-/*-----Profil administrateur-----*/
 .gestion-ajout {
   display: flex;
   flex-direction: column;
@@ -270,22 +250,20 @@ h3 {
 
 .admin-profil {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
   margin: 2%;
   
 }
 
 .gestion-article {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 45%;
-  padding: 2%;
+  width: 100%;
+  padding: 5%;
 }
 
 .ajout-article {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 45%;
+  width: 100%;
 }
 
 .formulaire-ajout-article {
@@ -358,8 +336,58 @@ footer a {
 }
 
 /*-------------------------------Desktop--------------------------*/
-@media (min-width: 877px) {
 
+
+@media (min-width: 877px) {
+/*-----Profil membre------------*/
+
+.member-profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+}
+
+.coordonnees {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 2%;
+  margin: 5%;
+  width: 70%;
+}
+
+h3 {
+  text-align: center;
+}
+
+
+
+/*-----Profil administrateur-----*/
+
+
+.admin-profil {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 2%;
+  
+}
+
+.gestion-article {
+  width: 45%;
+  padding: 2%;
+}
+
+.ajout-article {
+  width: 45%;
+}
 
 
   
