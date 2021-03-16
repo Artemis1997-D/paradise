@@ -8,7 +8,7 @@ include 'config/template/head.php';
   <h2>Isla Paloma</h2>
   <a class="arrow" href="#images-produit1"><img src="../paradise/asset/img/down-arrow.svg"></a>
 </section>
-<div class="content">
+<div class="content-produit">
 <section class="images-produit" id="images-produit1">
 <div class="card-deck">
   <div class="card">

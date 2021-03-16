@@ -8,7 +8,7 @@ include 'config/template/head.php';
 <h2>Sand Point Road Beach</h2>
 <a class="arrow" href="#images-produit2"><img src="../paradise/asset/img/down-arrow.svg"></a>
 </section>
-<div class="content">
+<div class="content-produit">
 <section class="images-produit" id="images-produit2">
 
 <div class="card-deck">

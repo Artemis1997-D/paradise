@@ -154,9 +154,9 @@ blockquote {
   width: 100%;
   margin: 5% auto;
   font-size: 30px;
+}
 
-
-.content {
+.content-produit {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
