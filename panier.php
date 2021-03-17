@@ -8,19 +8,20 @@
     <p class="detail">Isla Paloma<br>Panama<br>295 812€</p>
     <a href="#">Supprimer</a>
   </div>
-  <hr>
+<hr class="divider">
   <div class="article">
     <img class="image-panier" src="asset\img_produit\sand-point-road-beach.jpg" alt="bungalow" >
     <p class="detail">Isla Paloma<br>Panama<br>295 812€</p>
     <a href="#">Supprimer</a>
   </div>
 </div>
-<hr>
+<hr class="divider">
 <div class="total">
   <p>Total</p>
   <p>3 967 989€</p>
 </div>
 </section>
+<hr>
 
 <?php include 'config/template/footer.php'; ?>
 

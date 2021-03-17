@@ -8,12 +8,12 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
+  font-family: 'Karla', sans-serif;
 }
 
 
 a {
-  color: #44444C;
+  color: blue;
 }
 
 header {
@@ -44,6 +44,8 @@ nav {
 
 h2{
   text-align: center;
+  font-family: ‘Lora’, serif;
+  font-style: italic;
 }
 
 
@@ -71,6 +73,7 @@ h2{
 #hero-home h4{
   width: 60%;
   margin: 2% auto;
+  
 }
 
 .produits {
@@ -81,11 +84,23 @@ h2{
   margin: 10% auto;
 }
 
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.price-home {
+  color: #FF2B60;
+}
+
 .produits a {
   color: white;
 }
 
-
+h5 {
+  font-family: ‘Lora’, serif;
+  font-style: italic;
+}
 
 .perimeter-price {
   display: flex;
@@ -125,6 +140,10 @@ h2{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.liste-produit a {
+  color: white;
 }
 
 .produit-page-produit {
@@ -219,6 +238,7 @@ blockquote {
 
 .price {
   margin: 4% 0;
+  
 }
 
 .btn-panier {
@@ -245,6 +265,7 @@ blockquote {
   background-size: cover;
   height: 150vh;
 }
+
 
 /*---------Profil Membre----------*/
 .member-profil {
@@ -337,6 +358,10 @@ td {
   width: 60%;
 }
 
+.divider {
+  width: 80%;
+  border-color: lightblue;
+}
 
 .total{
   display: flex;
@@ -350,17 +375,18 @@ footer {
   padding: 3%;
   display: flex;
   justify-content:space-around;
-  background:  #F4ECC4;
+  background:  white;
 }
 
 footer a {
-  color: grey;
+  color: blue;
 }
 
 /*-------------------------------Desktop--------------------------*/
 
 
 @media (min-width: 877px) {
+
 /*-----Profil membre------------*/
 
 .member-profil {
@@ -419,9 +445,25 @@ h3 {
 
 }
 
+
 .image-produit {
   width: 450px;
   height: 300px;
 }
   
+}
+
+}
+
+/*---------------Mobile---------------------------------*/
+
+@media(max-width: 321px) {
+
+  /*------Home-------------------*/
+  
+  #home {
+    text-align: center;
+    margin: auto;
+  }
+
 }

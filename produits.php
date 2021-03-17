@@ -5,25 +5,26 @@
 <div class="liste-produit">
   <div class="produit-page-produit">
     <img class="image-produit" src="asset\img_produit\isla-paloma-img2.jpg" alt="Isla Paloma" >
-    <p>Isla Paloma</p>
+    <h5>Isla Paloma</h5>
     <P>Panama</p>
     <p>2000 m2</p>
     <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
   </div>
   <div class="produit-page-produit">
     <img class="image-produit" src="asset\img_produit\sand-point-img1.jpg" alt="Sand point beach">
-    <p>Sand Point Road Beach</p>
+    <h5>Sand Point Road Beach</h5>
     <p>Caymant Island</p>
     <p>3700 m2</p>
     <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
   </div>
   <div class="produit-page-produit">
     <img class="image-produit" src="asset\img_produit\dream-thai-bungalow.jpg" alt="Bengalow" srcset="">
-    <p>Dream Thai Bungalow</p>
+    <h5>Dream Thai Bungalow</h5>
     <p>Thailande</p>
     <p>290 m2</p>
     <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
   </div>
 </div>
+<hr>
 
 <?php include 'config/template/footer.php'; ?>

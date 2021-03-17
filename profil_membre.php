@@ -24,7 +24,7 @@
     </div>
     <a href="deconnexion.php">Déconnexion</a>
 </section>
-
+<hr>
 
 
 

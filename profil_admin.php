@@ -54,6 +54,7 @@
 
 <a  href="deconnexion.php">Déconnexion</a>
 </div>
+<hr>
 
 
 <?php include 'config/template/footer.php'; ?>

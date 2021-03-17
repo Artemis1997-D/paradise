@@ -48,6 +48,7 @@
     <label class="form-check-label" for="exampleCheck1">S'inscrire à notre newsletter</label>
   </div>
   <button type="submit" class="btn btn-primary" id="btn-inscrire">S'inscrire</button>
+  <p><a href="login.php">Déja inscrit ?</a>
 </form>
 </section>
 
