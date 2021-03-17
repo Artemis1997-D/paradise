@@ -17,6 +17,7 @@
       </tr>
     </table>
 </section>
+<br>
 <section class="ajout-article">
     <form class="formulaire-ajout-article" action="" method="post">
       <h3>Ajout d'un article</h3>
