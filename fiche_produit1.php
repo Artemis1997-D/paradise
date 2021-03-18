@@ -14,17 +14,17 @@ include 'config/template/head.php';
               <div class="card-deck">
                 <div class="card">
                   <div>
-                    <img class="card-img" src="../paradise/asset/img_produit/isla-paloma-img1.jpg">
+                    <img class="card-img" src="../paradise/asset/img_produit/isla-paloma-img1.jpg" alt="bateau sur une plage paradisiaque">
                   </div>
                 </div>
                 <div class="card">
                   <div>
-                    <img class="card-img" src="../paradise/asset/img_produit/isla-paloma-img2.jpg">
+                    <img class="card-img" src="../paradise/asset/img_produit/isla-paloma-img2.jpg" alt="ponton bois avec vue sur la mer">
                   </div>
                 </div>
                 <div class="card">
                   <div>
-                    <img class="card-img" src="../paradise/asset/img_produit/isla-paloma-img3.jpg">
+                    <img class="card-img" src="../paradise/asset/img_produit/isla-paloma-img3.jpg" alt="plage avec de la verdure">
                   </div>
                 </div>
               </div>

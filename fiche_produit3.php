@@ -14,17 +14,17 @@ include 'config/template/head.php';
             <div class="card-deck">
               <div class="card">
                 <div>
-                  <img class="card-img" src="../paradise/asset/img_produit/dream-bungalow-img1.jpg">
+                  <img class="card-img" src="../paradise/asset/img_produit/dream-bungalow-img1.jpg" alt="bungalow privée avec avion et bateau"> 
                 </div>
               </div>
               <div class="card">
                 <div>
-                  <img class="card-img" src="../paradise/asset/img_produit/dream-bungalow-img2.jpg">
+                  <img class="card-img" src="../paradise/asset/img_produit/dream-bungalow-img2.jpg" alt="bungalows avec vue sur la mer et un pot de fleur">
                 </div>
               </div>
               <div class="card">
                 <div>
-                  <img class="card-img" src="../paradise/asset/img_produit/dream-bungalow-img3.jpg">
+                  <img class="card-img" src="../paradise/asset/img_produit/dream-bungalow-img3.jpg" alt="bungalow avec piscine privée et palmiers">
                 </div>
               </div>
             </div>

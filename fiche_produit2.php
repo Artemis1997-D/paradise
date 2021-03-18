@@ -14,17 +14,17 @@ include 'config/template/head.php';
             <div class="card-deck">
               <div class="card">
                 <div>
-                  <img class="card-img" src="../paradise/asset/img_produit/sand-point-img1.jpg">
+                  <img class="card-img" src="../paradise/asset/img_produit/sand-point-img1.jpg" alt="plage privée au coucher de soleil avec un ciel violet">
                 </div>
               </div>
               <div class="card">
                 <div>                      
-                  <img class="card-img" src="../paradise/asset/img_produit/sand-point-img2.jpg">
+                  <img class="card-img" src="../paradise/asset/img_produit/sand-point-img2.jpg" alt="bord de mer au coûcher de soleil">
                 </div>
               </div>
               <div class="card">
                 <div>
-                  <img class="card-img" src="../paradise/asset/img_produit/sand-point-img3.jpg">
+                  <img class="card-img" src="../paradise/asset/img_produit/sand-point-img3.jpg" alt="bord de mer sablé ensoleillée">
                 </div>
               </div>
             </div>

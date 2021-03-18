@@ -20,7 +20,7 @@ include 'config/template/head.php';
             <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
           </div>
           <div class="produit-page-produit">
-            <img class="image-produit" src="asset\img_produit\dream-thai-bungalow.jpg" alt="Bengalow" srcset="">
+            <img class="image-produit" src="asset\img_produit\dream-thai-bungalow.jpg" alt="Bungalow" srcset="">
             <h5>Dream Thai Bungalow</h5>
             <p>Thailande</p>
             <p>290 m2</p>

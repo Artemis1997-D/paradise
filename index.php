@@ -3,17 +3,17 @@
 ?>
         </header>
 <!-----------Hero_image_Accueil-------------------------------------------------------------------------------------------------->
-        <section class="hero" id="hero-home">
+        <section class="hero" id="hero-home" alt="photo en hauteur de la plage et de la mer cristalline">
           <h2>Une collection unique d'îles paradisiaques</h>
           <h4>Découvrez nos offres d’îles paradisiaques qui n’attendent que leurs futurs propriétaires</h4>
-          <a class="arrow" href="#produits"><img src="../paradise/asset/img/down-arrow.svg"></a>
+          <a class="arrow" href="#produits"><img src="../paradise/asset/img/down-arrow.svg" alt="ancre qui mène aux meilleurs articles"></a>
         </section>
 <!-----------Sélection_de_produits_avec_img_et_caractéristiques_en_card-------------------------------------------------------------------------------------------------->
         <section class="produits" id="produits">
           <h2>Nos meilleurs articles</h2>
           <div class="card-deck">
             <div class="card">
-              <img class="card-img-top" src="../paradise/asset/img_produit/isla-panama.jpg" alt="Card image cap">
+              <img class="card-img-top" src="../paradise/asset/img_produit/isla-panama.jpg" alt="maison à Isla Paloma">
                 <div class="card-body">
                   <h5 class="card-title">Isla Paloma</h5>
                   <h6 class="card-title">Panama</h6>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="../paradise/asset/img_produit/sand-point-road-beach.jpg" alt="Card image cap">
+              <img class="card-img-top" src="../paradise/asset/img_produit/sand-point-road-beach.jpg" alt="Sand Point Road Beach">
                 <div class="card-body">
                   <h5 class="card-title">Sand Point Road Beach</h5>
                   <h6 class="card-title">Caymant Island</h6>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="../paradise/asset/img_produit/dream-thai-bungalow.jpg" alt="Card image cap">
+              <img class="card-img-top" src="../paradise/asset/img_produit/dream-thai-bungalow.jpg" alt="Bungalow au-dessus de la mer">
                 <div class="card-body">
                   <h5 class="card-title">Dream Thaï Bungalow</h5>
                   <h6 class="card-title">Thaïlande</h6>
