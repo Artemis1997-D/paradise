@@ -459,7 +459,7 @@ h3 {
 
 /*---------------Mobile---------------------------------*/
 
-@media(max-width: 321px) {
+@media(max-width: 800px) {
 
   /*------Home-------------------*/
   
@@ -467,5 +467,10 @@ h3 {
     text-align: center;
     margin: auto;
   }
+
+  .connexion-inscription {
+    width: 70%;
+  }
+
 
 }
