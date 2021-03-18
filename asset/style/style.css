@@ -12,7 +12,7 @@ body {
 }
 
 a {
-  color: white;
+  color: blue;
 }
 
 header {
@@ -23,7 +23,7 @@ header {
   text-align: center;
   position: sticky;
   top: 0px;
-  background-color: #A8BCDB;
+  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -372,11 +372,11 @@ footer {
   padding: 3%;
   display: flex;
   justify-content:space-around;
-  background:  #A8BCDB;
+  background:  white;
 }
 
 footer a {
-  color: white;
+  color: blue;
 }
 
 /*-------------------------------Desktop--------------------------*/
