@@ -27,5 +27,4 @@ include 'config/template/head.php';
             <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
           </div>
         </div>
-        <hr>
 <?php include 'config/template/footer.php'; ?>

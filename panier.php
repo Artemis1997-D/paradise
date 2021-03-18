@@ -24,6 +24,5 @@ include 'config/template/head.php';
                 <p>3 967 989€</p>
               </div>
         </section>
-        <hr>
 <?php include 'config/template/footer.php'; ?>
 
