@@ -1,6 +1,5 @@
 <?php
 
-
 //connexion PDO
 
 //variable d'affichage etc.

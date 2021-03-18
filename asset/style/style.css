@@ -11,9 +11,8 @@ body {
   font-family: 'Karla', sans-serif;
 }
 
-
 a {
-  color: blue;
+  color: white;
 }
 
 header {
@@ -24,7 +23,7 @@ header {
   text-align: center;
   position: sticky;
   top: 0px;
-  background-color: white;
+  background-color: #A8BCDB;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -48,16 +47,12 @@ h2{
   font-style: italic;
 }
 
-
-
 /*---------Home(index)--------- */
-
 
 #home {
   width: 40%;
   text-align: left;
 }
-
 
 #hero-home {
   background-image: url("../img/hero-home.jpg");
@@ -198,8 +193,6 @@ h5 {
   flex-wrap: wrap;
   width: 100%;
   margin: 5% auto;
-
-
 }
 
 blockquote {
@@ -375,11 +368,11 @@ footer {
   padding: 3%;
   display: flex;
   justify-content:space-around;
-  background:  white;
+  background:  #A8BCDB;
 }
 
 footer a {
-  color: blue;
+  color: white;
 }
 
 /*-------------------------------Desktop--------------------------*/

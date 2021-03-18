@@ -18,10 +18,6 @@ if(isset($_GET['access']) && $_GET['access'] == 'forbidden'){
 
 if (isset($_POST['envoyer'])) {
 
-
-
-
-
     echo '<pre>';
     print_r($_POST);
     echo '</pre';
