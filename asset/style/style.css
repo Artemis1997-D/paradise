@@ -131,6 +131,7 @@ h5 {
 
 /*-----------Page Produits---------*/
 
+
 .liste-produit{
   display: flex;
   flex-direction: row;
@@ -459,13 +460,18 @@ h3 {
 
 /*---------------Mobile---------------------------------*/
 
-@media(max-width: 321px) {
+@media(max-width: 414px) {
 
   /*------Home-------------------*/
   
-  #home {
+#home {
     text-align: center;
     margin: auto;
-  }
-
+}
+.connexion-inscription {
+    width: 90%;
+}
+#hero-login {
+  height: 80vh;
+}
 }
