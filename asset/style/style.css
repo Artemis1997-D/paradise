@@ -282,6 +282,10 @@ h3 {
   padding: 2%;
 }
 
+.gestion-ajout a {
+  color: blue;
+}
+
 .admin-profil {
   display: flex;
   flex-direction: column;
