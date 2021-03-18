@@ -4,7 +4,7 @@
         </header>
 <!-----------Hero_image_Accueil-------------------------------------------------------------------------------------------------->
         <section class="hero" id="hero-home" alt="photo en hauteur de la plage et de la mer cristalline">
-          <h2>Une collection unique d'îles paradisiaques</h>
+          <h2>Une collection unique d'îles paradisiaques</h2>
           <h4>Découvrez nos offres d’îles paradisiaques qui n’attendent que leurs futurs propriétaires</h4>
           <a class="arrow" href="#produits"><img src="../paradise/asset/img/down-arrow.svg" alt="ancre qui mène aux meilleurs articles"></a>
         </section>

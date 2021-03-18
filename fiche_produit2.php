@@ -5,7 +5,7 @@ include 'config/template/head.php';
 <!-----------Hero_image_du_produit-------------------------------------------------------------------------------------------------->
         <section id="hero-produit2" class="hero-produit">
           <h2>Sand Point Road Beach</h2>
-          <a class="arrow" href="#images-produit2"><img src="../paradise/asset/img/down-arrow.svg"></a>
+          <a class="arrow" href="#images-produit2"><img src="../paradise/asset/img/down-arrow.svg" alt="lien vers les images"></a>
         </section>
 <!-----------Informations_sur_le_produit-------------------------------------------------------------------------------------------------->
         <div class="content-produit">
@@ -42,7 +42,7 @@ include 'config/template/head.php';
             <!-----------Quantité_du_produit-------------------------------------------------------------------------------------------------->
             <div class="add-panier"> 
               <p>Il reste 5 parcelles en stock</p>
-              <input type="number" class="quantity-article" name="" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
+              <input type="number" class="quantity-article" name="quantity" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
               <!-----------Prix_produit-------------------------------------------------------------------------------------------------->
               <p class="price">295 812€</p>
               <button class="btn-panier">Ajouter au panier</button>

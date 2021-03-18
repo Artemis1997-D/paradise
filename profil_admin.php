@@ -26,23 +26,23 @@ include 'config/template/head.php';
                                     <hr>
                                     <div class="form-group">
                                         <label for="ExampleArticle">Nom de l'article</label>
-                                        <input type="text" class="name-article" name="" id="ExampleArticle" placeholder="Entrer le nom de l'article">
+                                        <input type="text" class="name-article" name="name-article" id="ExampleArticle" placeholder="Entrer le nom de l'article">
                                     </div>
                                     <div class="form-group">
                                         <label for="ExampleDescription">Description</label>
-                                        <input type="textarea" class="description-article" name="" id="ExampleDescription" placeholder="Présentez en quelques lignes le produit">
+                                        <input type="textarea" class="description-article" name="description-article" id="ExampleDescription" placeholder="Présentez en quelques lignes le produit">
                                     </div>
                                     <div class="form-group">
                                         <label for="ExampleLocalisation">Localisation</label>
-                                        <input type="text" class="localisation-article" name="" id="ExampleLocalisation" placeholder="Entrez la localisation du produit">
+                                        <input type="text" class="localisation-article" name="localisation-article" id="ExampleLocalisation" placeholder="Entrez la localisation du produit">
                                     </div>
                                     <div class="form-group">
                                         <label for="ExampleSuperficie">Superficie(m2)</label>
-                                        <input type="number" class="superficie-article" name="" id="ExampleSuperficie" placeholder="Entrez la superficie du produit">
+                                        <input type="number" class="superficie-article" name="superficie-article" id="ExampleSuperficie" placeholder="Entrez la superficie du produit">
                                     </div>
                                     <div class="form-group">
                                         <label for="ExampleQuantity">Quantité</label>
-                                        <input type="number" class="quantity-article" name="" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
+                                        <input type="number" class="quantity-article" name="quantity-article" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Ajouter</button>
                                 </form>

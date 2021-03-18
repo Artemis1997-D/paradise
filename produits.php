@@ -6,21 +6,21 @@ include 'config/template/head.php';
         <!-----------Liste_produits_card_deck_avec_caractéristiques-------------------------------------------------------------------------------------------------->
         <div class="liste-produit">
           <div class="produit-page-produit">
-            <img class="image-produit" src="asset\img_produit\isla-paloma-img2.jpg" alt="Isla Paloma" >
+            <img class="image-produit" src="asset/img_produit/isla-paloma-img2.jpg" alt="Isla Paloma" >
             <h5>Isla Paloma</h5>
             <P>Panama</p>
             <p>2000 m2</p>
             <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
           </div>
           <div class="produit-page-produit">
-            <img class="image-produit" src="asset\img_produit\sand-point-img1.jpg" alt="Sand point beach">
+            <img class="image-produit" src="asset/img_produit/sand-point-img1.jpg" alt="Sand point beach">
             <h5>Sand Point Road Beach</h5>
             <p>Caymant Island</p>
             <p>3700 m2</p>
             <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
           </div>
           <div class="produit-page-produit">
-            <img class="image-produit" src="asset\img_produit\dream-thai-bungalow.jpg" alt="Bungalow" srcset="">
+            <img class="image-produit" src="asset/img_produit/dream-thai-bungalow.jpg" alt="Bungalow" srcset="">
             <h5>Dream Thai Bungalow</h5>
             <p>Thailande</p>
             <p>290 m2</p>

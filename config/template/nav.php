@@ -1,4 +1,4 @@
-<!-----------Barre de navigation----------------------------------------------------------->
+<!-----------Barre-de-navigation----------------------------------------------------------->
                 <h1 id="home"><a class="nav-link" href="index.php">Paradise</a></h1>
                 <nav class="nav">
                     <a  class="nav-link" href="produits.php">Produits</a>

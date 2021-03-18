@@ -3,7 +3,7 @@ include 'config/template/head.php';
 ?>
         </header>
 <!-----------Hero_image_Inscription-------------------------------------------------------------------------------------------------->
-        <section class="hero" id="hero-inscription" alt="sous l'océan">
+        <section class="hero" id="hero-inscription">
           <!-----------Form_Inscription-------------------------------------------------------------------------------------------------->
           <form class="connexion-inscription">
             <h2 class="text-center mt-5 mb-5">Inscription</h2>

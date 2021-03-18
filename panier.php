@@ -7,13 +7,13 @@ include 'config/template/head.php';
             <!-----------Liste_articles_dans_le_panier-------------------------------------------------------------------------------------------------->
             <div class="panier">
               <div class="article">
-                <img class="image-panier" src="asset\img_produit\isla-paloma-img1.jpg" alt="Isla-Paloma" >
+                <img class="image-panier" src="asset/img_produit/isla-paloma-img1.jpg" alt="Isla-Paloma" >
                 <p class="detail">Isla Paloma<br>Panama<br>295 812€</p>
                 <a href="#">Supprimer</a>
               </div>
             <hr class="divider">
               <div class="article">
-                <img class="image-panier" src="asset\img_produit\sand-point-road-beach.jpg" alt="Bungalow" >
+                <img class="image-panier" src="asset/img_produit/sand-point-road-beach.jpg" alt="Bungalow" >
                 <p class="detail">Isla Paloma<br>Panama<br>295 812€</p>
                 <a href="#">Supprimer</a>
               </div>
