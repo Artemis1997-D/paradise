@@ -6,8 +6,6 @@ html {
 
 body {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   font-family: 'Karla', sans-serif;
   background-color: #eaf2ff;
 }
@@ -17,33 +15,20 @@ a {
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   text-align: center;
-  position: sticky;
   top: 0px;
   background-color: #f8f9f5;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-nav {
-  align-items: center;
-}
-
 .hero {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
   height: 100vh;
 
 }
 
 h2{
-  text-align: center;
   font-family: ‘Lora’, serif;
   font-style: italic;
 }
@@ -52,7 +37,6 @@ h2{
 
 #home {
   width: 40%;
-  text-align: left;
 }
 
 #hero-home {
@@ -62,31 +46,14 @@ h2{
   color:white;
 }
 
-#hero-home h2{
-  margin: 10% 0;
-}
 
 #hero-home h4{
   width: 60%;
-  margin: 2% auto;
-  
 }
 
 .produits {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   width: 80%;
-  margin: 10% auto;
-}
-
-.card-deck {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.price-home {
-  color: #FF2B60;
 }
 
 .produits a {
@@ -98,16 +65,9 @@ h5 {
   font-style: italic;
 }
 
-.perimeter-price {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .arrow{
   width: 50px;
   height: 50px;
-  margin: 0 auto;
 }
 
 #choisir-paradise {

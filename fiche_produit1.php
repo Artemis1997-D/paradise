@@ -4,8 +4,8 @@ include 'config/template/head.php';
         </header>
 <!-----------Hero_image_du_produit-------------------------------------------------------------------------------------------------->
         <section id="hero-produit1" class="hero-produit">
-          <h2>Isla Paloma</h2>
-          <a class="arrow" href="#images-produit1"><img src="../paradise/asset/img/down-arrow.svg" alt="lien vers les images"></a>
+          <h2 class="text-center">Isla Paloma</h2>
+          <a class="arrow my-0 mx-auto" href="#images-produit1"><img src="../paradise/asset/img/down-arrow.svg" alt="lien vers les images"></a>
         </section>
 <!-----------Informations_sur_le_produit-------------------------------------------------------------------------------------------------->
           <div class="content-produit">

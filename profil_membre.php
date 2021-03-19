@@ -3,7 +3,7 @@ include 'config/template/head.php';
 ?>
                 </header>
                 <section class="member-profil">
-                    <h2>Bienvenue Jacques</h2>
+                    <h2 class="text-center">Bienvenue Jacques</h2>
                         <div class="card">
                             <h3> Vos coordonnées</h3>
                             <hr>

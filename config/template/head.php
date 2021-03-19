@@ -14,8 +14,8 @@
             <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400&family=Lora:ital@1&display=swap" rel="stylesheet">
         </head>
 
-        <body>
-            <header>
+        <body class="m-0 p-0">
+            <header class="d-flex flex-row flex-wrap position-sticky" >
                 <?php
                 require 'config/init.php';
                 include 'nav.php';

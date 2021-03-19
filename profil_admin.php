@@ -3,7 +3,7 @@ include 'config/template/head.php';
 ?>
                 </header>
                 <div class="gestion-ajout">
-                    <h2>Bienvenue Jacques</h2>
+                    <h2 class="text-center">Bienvenue Jacques</h2>
                         <div class="admin-profil">
                             <!-----------Section_de_admin_gestion_des_articles_déjà_présents-------------------------------------------------------------------------------------------------->
                             <section class="gestion-article">

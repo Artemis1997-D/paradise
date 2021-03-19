@@ -2,7 +2,7 @@
 include 'config/template/head.php'; 
 ?>
         </header>
-        <h2 >Nos Produits</h2>
+        <h2 class="text-center">Nos Produits</h2>
         <!-----------Liste_produits_card_deck_avec_caractéristiques-------------------------------------------------------------------------------------------------->
         <div class="liste-produit">
           <div class="produit-page-produit">
