@@ -71,8 +71,6 @@ h5 {
 }
 
 #choisir-paradise {
-  display: flex;
-  flex-direction: column;
   background-image: url("../img/section-home.webp");
   background-size: cover;
   height: 100vh;
@@ -86,18 +84,9 @@ h5 {
 
 #choisir-paradise-content {
   width: 80%;
-  margin: auto;
 }
 
 /*-----------Page Produits---------*/
-
-
-.liste-produit{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
 .liste-produit a {
   color: white;
@@ -105,8 +94,6 @@ h5 {
 
 .produit-page-produit {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  padding: 5%;
-  margin: 5%;
   background-color: white;
 
 }
@@ -118,12 +105,6 @@ h5 {
 
 /*----------Fiche_produit 1/2/3*/
 
-.hero-produit {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .hero-produit h2{
   font-size: 80px;
@@ -131,52 +112,37 @@ h5 {
   text-shadow: 2px 2px 0px black;
 }
 
+#hero-produit1,
+#hero-produit2,
+#hero-produit3 {
+  height: 100vh;
+  background-size: cover;
+}
+
 #hero-produit1 {
   background-image: url("../img_produit/isla-panama-big.webp");
-  background-size: cover;
-  height: 100vh;
+  
 }
 
 #hero-produit2 {
   background-image: url("../img_produit/sand-point-road-beach-big.webp");
-  background-size: cover;
-  height: 100vh;
 }
 
 #hero-produit3 {
   background-image: url("../img_produit/dream-thai-bungalow-big.webp");
-  background-size: cover;
-  height: 100vh;
 }
 
 .images-produit {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
   width: 100%;
-  margin: 5% auto;
 }
 
 blockquote {
   width: 100%;
-  margin: 5% auto;
   font-size: 30px;
 }
 
 .content-produit {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   width: 80%;
-  margin: auto;
-}
-
-.bottom-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 5% 0;
 }
 
 .description {
@@ -192,25 +158,17 @@ blockquote {
   width: 100%;
 }
 
-.price {
-  margin: 4% 0;
-  
-}
-
 .btn-panier {
    background-color: #FF2B60;
    font-weight: bold;
    color: white;
-   border: none;
 }
 
 /*-----Login/Inscription----*/
 
 
 .connexion-inscription {
-  width: 50%;
-  margin: auto;
-  padding: 3%;
+  width: 60%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -224,43 +182,20 @@ blockquote {
 
 
 /*---------Profil Membre----------*/
-.member-profil {
-  padding: 5%;
-}
 
-h3 {
-  margin: auto;
-}
 
-.coordonnees{
-  padding-left: 5%;
-}
 
 /*---------Profil Administrateur----------*/
-
-.gestion-ajout {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2%;
-  
-}
 
 .gestion-ajout a {
   color: blue;
 }
 
-.admin-profil {
-  display: flex;
-  flex-direction: column;
-  margin: 2%;
-  
-}
+
 
 .gestion-article {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   width: 100%;
-  padding: 5%;
   background-color: white;
 }
 
@@ -270,54 +205,34 @@ h3 {
   background-color: white;
 }
 
-.formulaire-ajout-article {
-  margin: auto;
-  padding: 5%;
-}
-
 .formulaire-ajout-article input {
   width: 100%;
 }
 
-#deconnexion {
-  display: flex;
+.deconnexion {
   width: 68%;
-  padding: 5% 0;
-  margin: auto;
 }
 
 td {
   border: solid 1px;
-  padding: 10px;
 }
 
 /*------Panier------*/
 .content {
   height: 65vh;
 }
-.panier{
-  display: flex;
-  flex-direction: column;
-}
 
 .article{
-  display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   width: 70%;
-  margin: auto;
 }
 
 .image-panier {
   width: 100px;
   height: 100px;
-  margin-right: 2%;
 }
 
 .detail {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   width: 60%;
 }
 
@@ -327,18 +242,12 @@ td {
 }
 
 .total{
-  display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
 }
 
 
 /*----Footer----*/
 footer {
-  padding: 3%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:space-around;
   background:  #45AF72;
   height: 28vh;
 }

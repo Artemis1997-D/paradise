@@ -3,14 +3,14 @@ include 'config/template/head.php';
 ?>
         </header>
 <!-----------Hero_image_du_produit-------------------------------------------------------------------------------------------------->
-        <section id="hero-produit3" class="hero-produit">
+        <section id="hero-produit3" class="hero-produit d-flex flex-column justify-content-center align-items-center">
           <h2 class="text-center">Dream Thaï Bungalow</h2>
           <a class="arrow my-0 mx-auto" href="#images-produit3"><img src="../paradise/asset/img/down-arrow.svg" alt="lien vers les images"></a>
         </section>
 <!-----------Informations_sur_le_produit-------------------------------------------------------------------------------------------------->
-        <div class="content-produit">
+        <div class="content-produit d-flex flex-column  flex-wrap m-auto">
         <!-----------Images_du_produit-------------------------------------------------------------------------------------------------->
-          <section class="images-produit" id="images-produit3">
+          <section class="images-produit d-flex flex-row justify-content-center flex-wrap my-5 mx-auto" id="images-produit3">
             <div class="card-deck">
               <div class="card">
                 <div>
@@ -31,9 +31,9 @@ include 'config/template/head.php';
           </section>
            <!-----------Citations_sur_le_voyage-------------------------------------------------------------------------------------------------->
           <section>
-            <blockquote>“Le bonheur n’est pas une destination à atteindre, mais une façon de voyager”</blockquote>
+            <blockquote class="my-5 mx-auto">“Le bonheur n’est pas une destination à atteindre, mais une façon de voyager”</blockquote>
           </section>
-          <section class="bottom-content">
+          <section class="bottom-content d-flex flex-wrap justify-content-between my-5 mx-auto">
             <!-----------Description_du_produit-------------------------------------------------------------------------------------------------->
             <div class="description">
               <h4>Description du produit</h4>
@@ -44,8 +44,8 @@ include 'config/template/head.php';
               <p>Il reste 5 parcelles en stock</p>
               <input type="number" class="quantity-article" name="quantity" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
               <!-----------Prix_produit-------------------------------------------------------------------------------------------------->
-              <p class="price">295 812€</p>
-              <button class="btn-panier">Ajouter au panier</button>
+              <p class="price my-4 mx-0">295 812€</p>
+              <button class="btn-panier border border-light">Ajouter au panier</button>
             </div>
           </section>
         </div>

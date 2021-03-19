@@ -1,4 +1,4 @@
-                <footer>
+                <footer class="d-flex flex-wrap justify-content-around p-4">
                     <a class="nav-link" href="produits.php">Produits</a>
                     <a class="nav-link" href="profil_admin.php">Admin</a>
                     <div>

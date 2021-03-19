@@ -2,26 +2,26 @@
 include 'config/template/head.php'; 
 ?>
                 </header>
-                <div class="gestion-ajout">
+                <div class="gestion-ajout d-flex flex-column justify-content-center p-2">
                     <h2 class="text-center">Bienvenue Jacques</h2>
-                        <div class="admin-profil">
+                        <div class="admin-profil d-flex flex-row flex-wrap justify-content-around m-4">
                             <!-----------Section_de_admin_gestion_des_articles_déjà_présents-------------------------------------------------------------------------------------------------->
-                            <section class="gestion-article">
+                            <section class="gestion-article p-5 my-3">
                                 <h3>Gestion des articles</h3>
                                 <hr>
                                 <p>8 articles disponibles</p>
                                 <table class="card-stock">
                                     <tr>
-                                        <td>Isla Paloma Panama 295 812€</td>
-                                        <td> 5 en stock</td>
-                                        <td><a href="#">Supprimer 1 élément</a></td>
+                                        <td class="p-1">Isla Paloma Panama 295 812€</td>
+                                        <td class="p-1"> 5 en stock</td>
+                                        <td class="p-1"><a href="#">Supprimer 1 élément</a></td>
                                     </tr>
                                 </table>
                             </section>
                             <br>
                             <!-----------Section_ajout_article_dans_la_liste_des_produits-------------------------------------------------------------------------------------------------->
-                            <section class="ajout-article">
-                                <form class="formulaire-ajout-article" action="" method="post">
+                            <section class="ajout-article my-3">
+                                <form class="formulaire-ajout-article m-auto p-5" action="" method="post">
                                     <h3>Ajout d'un article</h3>
                                     <hr>
                                     <div class="form-group">
@@ -52,6 +52,6 @@ include 'config/template/head.php';
                                 </form>
                             </section>
                         </div>
-                    <a  href="deconnexion.php">Déconnexion</a>
+                    <a  class="deconnexion d-flex py-3 px-0 m-auto" href="deconnexion.php">Déconnexion</a>
                 </div>
 <?php include 'config/template/footer.php'; ?>

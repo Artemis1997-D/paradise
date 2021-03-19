@@ -3,9 +3,9 @@ include 'config/template/head.php';
 ?>
         </header>
 <!-----------Hero_image_Inscription-------------------------------------------------------------------------------------------------->
-        <section class="hero" id="hero-inscription">
+        <section class="hero d-flex flex-column justify-content-center text-center" id="hero-inscription">
           <!-----------Form_Inscription-------------------------------------------------------------------------------------------------->
-          <form class="connexion-inscription">
+          <form class="connexion-inscription m-auto p-5">
             <h2 class="text-center mt-5 mb-5">Inscription</h2>
               <div>
                 <div class="form-group" >

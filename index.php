@@ -19,7 +19,7 @@
                   <h6 class="card-title">Panama</h6>
                   <p class="card-text">290 m2</p>
                   <p class="card-text">295 812€</p>
-                  <button type="button" class="btn btn-info"><a href="fiche_produit1.webp">Voir</a></button>
+                  <button type="button" class="btn btn-info"><a href="fiche_produit1.php">Voir</a></button>
                 </div>
             </div>
             <div class="card">
@@ -29,7 +29,7 @@
                   <h6 class="card-title">Caymant Island</h6>
                   <p class="card-text">3 700 m2</p>
                   <p class="card-text">4 287 228€</p>
-                  <button type="button" class="btn btn-info"><a href="fiche_produit2.webp">Voir</a></button>
+                  <button type="button" class="btn btn-info"><a href="fiche_produit2.php">Voir</a></button>
                 </div>
             </div>
             <div class="card">
@@ -45,9 +45,9 @@
           </div>
         </section>
 <!-----------Section_expliquant_pourquoi_il_faut_choisir_Paradise-------------------------------------------------------------------------------------------------->
-        <section id="choisir-paradise">
+        <section class="d-flex flex-column p-5" id="choisir-paradise">
           <h2 class="text-center">Pourquoi choisir Paradise ?</h2>
-            <div id="choisir-paradise-content">
+            <div class="m-auto" id="choisir-paradise-content">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Suspendisse ac ipsum sit amet dolor volutpat fringilla. 
                 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 

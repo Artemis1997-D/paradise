@@ -2,12 +2,12 @@
 include 'config/template/head.php'; 
 ?>
                 </header>
-                <section class="member-profil">
+                <section class="member-profil p-5">
                     <h2 class="text-center">Bienvenue Jacques</h2>
                         <div class="card">
-                            <h3> Vos coordonnées</h3>
+                            <h3 class="m-auto"> Vos coordonnées</h3>
                             <hr>
-                            <div class="coordonnees">
+                            <div class="coordonnees pl-5">
                                 <div>
                                     <h3>Adresse postale</h3>
                                     <p>4 rue des fleurs, <br>94790<br>La ville fleurie<br></p>
@@ -22,6 +22,6 @@ include 'config/template/head.php';
                                 </div> 
                             </div>
                         </div>
-                    <a href="deconnexion.php">Déconnexion</a>
+                    <a class="deconnexion d-flex py-5 px-0 m-auto" href="deconnexion.php">Déconnexion</a>
                 </section>
 <?php include 'config/template/footer.php'; ?>

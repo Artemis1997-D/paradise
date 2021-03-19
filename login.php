@@ -3,9 +3,9 @@ include 'config/template/head.php';
 ?>
         </header>
 <!-----------Hero_image_Connexion-------------------------------------------------------------------------------------------------->
-        <section class="hero" id="hero-login">
+        <section class="hero d-flex flex-column justify-content-center text-center" id="hero-login">
           <!-----------Form_Connexion-------------------------------------------------------------------------------------------------->
-          <form class="connexion-inscription">
+          <form class="connexion-inscription m-auto p-5">
             <h2 class="text-center mt-5 mb-5">Connexion</h2>
               <div class="form-group">
                 <label for="pseudo">Pseudo</label>
