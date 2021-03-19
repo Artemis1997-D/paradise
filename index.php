@@ -13,27 +13,27 @@
           <h2>Nos meilleurs articles</h2>
           <div class="card-deck">
             <div class="card">
-              <img class="card-img-top" src="asset/img_produit/isla-panama.jpg" alt="maison à Isla Paloma">
+              <img class="card-img-top" src="asset/img_produit/isla-panama.webp" alt="maison à Isla Paloma">
                 <div class="card-body">
                   <h5 class="card-title">Isla Paloma</h5>
                   <h6 class="card-title">Panama</h6>
                   <p class="card-text">290 m2</p>
                   <p class="card-text">295 812€</p>
-                  <button type="button" class="btn btn-info"><a href="fiche_produit1.php">Voir</a></button>
+                  <button type="button" class="btn btn-info"><a href="fiche_produit1.webp">Voir</a></button>
                 </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="asset/img_produit/sand-point-road-beach.jpg" alt="Sand Point Road Beach">
+              <img class="card-img-top" src="asset/img_produit/sand-point-road-beach.webp" alt="Sand Point Road Beach">
                 <div class="card-body">
                   <h5 class="card-title">Sand Point Road Beach</h5>
                   <h6 class="card-title">Caymant Island</h6>
                   <p class="card-text">3 700 m2</p>
                   <p class="card-text">4 287 228€</p>
-                  <button type="button" class="btn btn-info"><a href="fiche_produit2.php">Voir</a></button>
+                  <button type="button" class="btn btn-info"><a href="fiche_produit2.webp">Voir</a></button>
                 </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="asset/img_produit/dream-thai-bungalow.jpg" alt="Bungalow au-dessus de la mer">
+              <img class="card-img-top" src="asset/img_produit/dream-thai-bungalow.webp" alt="Bungalow au-dessus de la mer">
                 <div class="card-body">
                   <h5 class="card-title">Dream Thaï Bungalow</h5>
                   <h6 class="card-title">Thaïlande</h6>
