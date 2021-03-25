@@ -3,7 +3,7 @@ include 'config/template/head.php';
 ?>
         </header>
 <!-----------Hero_image_Inscription-------------------------------------------------------------------------------------------------->
-        <section class="hero d-flex flex-column justify-content-center text-center" id="hero-inscription">
+        <section class="hero d-flex flex-column justify-content-center text-center" id="hero-inscription" aria-label="hero image de la page d'inscription">
           <!-----------Form_Inscription-------------------------------------------------------------------------------------------------->
           <form class="connexion-inscription m-auto p-5">
             <h2 class="text-center mt-5 mb-5">Inscription</h2>
@@ -49,8 +49,8 @@ include 'config/template/head.php';
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">S'inscrire à notre newsletter</label>
                 </div>
-            <button type="submit" class="btn btn-primary" id="btn-inscrire">S'inscrire</button>
-            <p><a href="login.php">Déja inscrit ?</a>
+            <button type="submit" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et s'inscrire sur le site">S'inscrire</button>
+            <p><a href="login.php" aria-label="lien qui mène à la page de connexion">Déja inscrit ?</a>
           </form>
         </section>
 <?php include 'config/template/footer.php'; ?>

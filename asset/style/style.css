@@ -112,24 +112,11 @@ h5 {
   text-shadow: 2px 2px 0px black;
 }
 
-#hero-produit1,
-#hero-produit2,
-#hero-produit3 {
-  height: 100vh;
-  background-size: cover;
-}
 
 #hero-produit1 {
   background-image: url("../img_produit/isla-panama-big.webp");
-  
-}
-
-#hero-produit2 {
-  background-image: url("../img_produit/sand-point-road-beach-big.webp");
-}
-
-#hero-produit3 {
-  background-image: url("../img_produit/dream-thai-bungalow-big.webp");
+  height: 100vh;
+  background-size: cover;
 }
 
 .images-produit {
@@ -328,7 +315,6 @@ h3 {
 }
 
 
-
 /*---------------Mobile---------------------------------*/
 
 @media(max-width: 414px) {
@@ -349,3 +335,4 @@ h3 {
   height: 160vh;
 }
 }
+

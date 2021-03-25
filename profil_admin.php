@@ -14,7 +14,7 @@ include 'config/template/head.php';
                                     <tr>
                                         <td class="p-1">Isla Paloma Panama 295 812€</td>
                                         <td class="p-1"> 5 en stock</td>
-                                        <td class="p-1"><a href="#">Supprimer 1 élément</a></td>
+                                        <td class="p-1"><a href="#" aria-label="supprime un élément du stock">Supprimer 1 élément</a></td>
                                     </tr>
                                 </table>
                             </section>
@@ -48,10 +48,10 @@ include 'config/template/head.php';
                                         <label for="ExampleQuantity">Quantité</label>
                                         <input type="number" class="quantity-article" name="quantity-article" id="ExampleQuantity" placeholder="Entrez la quantité souhaité">
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                                    <button type="submit" class="btn btn-primary" aria-label="bouton qui permet de valider le formulaire et d'ajouter un nouvel article">Ajouter</button>
                                 </form>
                             </section>
                         </div>
-                    <a  class="deconnexion d-flex py-3 px-0 m-auto" href="deconnexion.php">Déconnexion</a>
+                    <a  class="deconnexion d-flex py-3 px-0 m-auto" href="deconnexion.php" aria-label="lien qui permet de se déconnecter">Déconnexion</a>
                 </div>
 <?php include 'config/template/footer.php'; ?>
