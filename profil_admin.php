@@ -25,8 +25,8 @@ include 'config/template/head.php';
                                     <h3>Ajout d'un article</h3>
                                     <hr>
                                     <div class="form-group">
-                                    <label for="img">Image de l'article</label>
-                                    <input type="file" id="img" name="img" accept="image/*">
+                                    <label for="img">Choisir 4 images pour l'article</label>
+                                    <input id="image" type="file" name="image" accept="image/*" multiple>
                                     </div>
                                     <div class="form-group">
                                         <label for="ExampleArticle">Nom de l'article</label>
