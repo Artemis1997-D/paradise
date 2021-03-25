@@ -5,7 +5,7 @@ include 'config/template/head.php';
 <!-----------Hero_image_du_produit-------------------------------------------------------------------------------------------------->
         <section id="hero-produit1" class="hero-produit d-flex flex-column justify-content-center align-items-center" aria-label="hero image de la fiche produit">
           <h2 class="text-center">Isla Paloma</h2>
-          <a class="arrow my-0 mx-auto" href="#images-produit1"><img src="../paradise/asset/img/down-arrow.svg" alt="ancre vers les images mini de la fiche produit"></a>
+          <a class="arrow my-0 mx-auto" href="#images-produit1"><img class="arrow" src="../paradise/asset/img/down-arrow.svg" alt="ancre vers les images mini de la fiche produit"></a>
         </section>
 <!-----------Informations_sur_le_produit-------------------------------------------------------------------------------------------------->
           <div class="content-produit d-flex flex-column  flex-wrap m-auto" aria-label="div qui contient tout le contenu après le footer">

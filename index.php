@@ -6,7 +6,7 @@
         <section class="hero d-flex flex-column justify-content-center text-center" id="hero-home" alt="photo en hauteur de la plage et de la mer cristalline" aria-label="hero image de la page d'accueil">
           <h2 class="text-center my-5 mx-0">Une collection unique d'îles paradisiaques</h2>
           <h4 class="mt-5 mx-auto">Découvrez nos offres d’îles paradisiaques qui n’attendent que leurs futurs propriétaires</h4>
-          <a class="arrow my-0 mx-auto" href="#produits"><img src="asset/img/down-arrow.svg" alt="ancre qui mène aux meilleurs articles"></a>
+          <a class="arrow my-0 mx-auto" href="#produits"><img class="arrow" src="asset/img/down-arrow.svg" alt="ancre qui mène aux meilleurs articles"></a>
         </section>
 <!-----------Sélection_de_produits_avec_img_et_caractéristiques_en_card-------------------------------------------------------------------------------------------------->
         <section class="produits d-flex flex-wrap my-5 mx-auto" id="produits" aria-label="présentation des trois meilleurs produits du site">
