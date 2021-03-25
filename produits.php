@@ -10,21 +10,21 @@ include 'config/template/head.php';
             <h5>Isla Paloma</h5>
             <P>Panama</p>
             <p>2000 m2</p>
-            <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
+            <button type="button" class="btn btn-info"><a href="fiche_produit1.php" aria-label="lien qui mène vers le produit">Voir</a></button>
           </article>
           <article class="produit-page-produit m-5 p-5">
             <img class="image-produit" src="asset/img_produit/sand-point-img1.webp" alt="Sand point beach">
             <h5>Sand Point Road Beach</h5>
             <p>Caymant Island</p>
             <p>3700 m2</p>
-            <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
+            <button type="button" class="btn btn-info"><a href="#" aria-label="lien qui mène vers le produit">Voir</a></button>
           </article>
           <article class="produit-page-produit m-5 p-5">
-            <img class="image-produit" src="asset/img_produit/dream-thai-bungalow.webp" alt="Bungalow" srcset="">
+            <img class="image-produit" src="asset/img_produit/dream-thai-bungalow.webp" alt="Bungalow">
             <h5>Dream Thai Bungalow</h5>
             <p>Thailande</p>
             <p>290 m2</p>
-            <button type="button" class="btn btn-info"><a href="fiche_produit3.php">Voir</a></button>
+            <button type="button" class="btn btn-info"><a href="#" aria-label="lien qui mène vers le produit">Voir</a></button>
           </article>
         </section>
 <?php include 'config/template/footer.php'; ?>
