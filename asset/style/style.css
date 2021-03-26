@@ -164,8 +164,6 @@ blockquote {
 
 #hero-login,
 #hero-inscription {
-  background-image: url("../img/hero-inscription.webp");
-  background-size: cover;
   height: 150vh;
 }
 
@@ -239,6 +237,7 @@ td {
 footer {
   background:  #EDDBC1;
   height: 28vh;
+  margin-top: 20vh;
 }
 
 footer a {
@@ -335,6 +334,10 @@ h3 {
 }
 #hero-inscription {
   height: 160vh;
+}
+
+#choisir-paradise p {
+  width: 80%;
 }
 }
 
