@@ -17,8 +17,8 @@
         <body class="m-0 p-0">
             <header class="d-flex flex-row flex-wrap position-sticky" >
                 <?php
-                require 'config/init.php';
                 include 'nav.php';
+                require 'config/init.php';
                 ?>
 
 

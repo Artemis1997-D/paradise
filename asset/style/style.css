@@ -162,9 +162,9 @@ blockquote {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-#hero-login,
 #hero-inscription {
   height: 150vh;
+  margin: 10% 0%;
 }
 
 
