@@ -3,6 +3,7 @@ include 'config/template/head.php';
 ?>
                 </header>
                 <div class="gestion-ajout d-flex flex-column justify-content-center p-2">
+                <?php echo $content; ?>
                     <h2 class="text-center">Bienvenue Jacques</h2>
                         <div class="admin-profil d-flex flex-row flex-wrap justify-content-around m-4">
                             <!-----------Section_de_admin_gestion_des_articles_déjà_présents-------------------------------------------------------------------------------------------------->

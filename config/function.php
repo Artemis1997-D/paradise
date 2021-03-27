@@ -77,7 +77,6 @@ if (isset($_GET['register']) && $_GET['register'] == 'true') {
 
 
 
-
 ?>
 
               

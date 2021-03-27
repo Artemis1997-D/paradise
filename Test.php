@@ -56,72 +56,28 @@ $champTelephone       = $_POST['telephone'] ?? null;
 
 
 
-if (isset($_POST['envoyer']) && $_POST['envoyer'] == "Envoyer les données") {
+if (isset($_POST['envoyer'])) {
 
   extract($_POST);
 
-  if(empty($prenom)){
-    $content .= "<div class='alert alert-danger'>Le champ prenom est vide</div>";
-  } 
+  $pseudoAdmin = "admin";
+  $mdpAdmin = "Admin1!";
   
-  if(empty($nom)){
-    $content .= "<div class='alert alert-danger'>Le champ nom est vide</div>";
-  } 
+  if (($pseudoAdmin == $pseudo) && ($mdpAdmin == $mdp)) { //administrateur
+    $_SESSION['user']['pseudo'] = $pseudo;
+    $_SESSION['user']['mdp'] = $mdp;
+    $_SESSION['user']['statut'] = 1;
 
-  if (empty($mdp)) {
-    $content .= "<div class='alert alert-danger'>Le champ Mot de passe est vide</div>";
-  } elseif (!preg_match('/[a-z]/', $mdp)) {
-    $content .= "<div class='alert alert-danger'>Votre mot de passe doit comprendre une lettre minuscule</div>";
-  } elseif (!preg_match('/[A-Z]/', $mdp)) {
-    $content .= "<div class='alert alert-danger'>Votre mot de passe doit comprendre une lettre majuscule</div>";
-  } elseif (!preg_match('/[0-9]/', $mdp)) {
-    $content .= "<div class='alert alert-danger'>Votre mot de passe doit comprendre un chiffre</div>";
-  } elseif (!preg_match('/[%!?*]/', $mdp)) {
-    $content .= "<div class='alert alert-danger'>Votre mot de passe doit comprendre un caractère spécial [%!?*]</div>";
-  } elseif (iconv_strlen($mdp) < 8 || iconv_strlen($mdp) > 20) {
-    $content .= "<div class='alert alert-danger'>Votre mot de passe doit être compris entre 8 et 20 caractères</div>";
-  } elseif ($mdp != $repeatmdp) {
-    $content .= "<div class='alert alert-danger'>Les mots de passe ne correspondent pas</div>";
-  }
-
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $content .= "<div class='alert alert-danger'>Email incorrect</div>";
-  }
-
-  if (!preg_match('/[0-9]/', $telephone)) {
-    $content .= "<div class='alert alert-danger'>Veuillez utiliser des chiffres pour le numéro de téléphone </div>";
-  } elseif (iconv_strlen($telephone) != 10 ) {
-    $content .= "<div class='alert alert-danger'>Le numéro de téléphone dois comprendre 10 chiffres </div>";
-  }
-
-  if (empty($content)) {
-    $mdpCrypt = password_hash($mdp, PASSWORD_DEFAULT);
-
-    $queryInsert = "INSERT INTO `membre`(`id`, `prenom`, `nom`, `civilite`, `mdp`, `email`, `adresse`, `telephone`) VALUES (:id,:prenom,:nom, :civilite, :mdp, :email, :adresse, :telephone)";
-
-    $reqPrep = $pdo->prepare($queryInsert);
-    $reqPrep->execute(
-        [
-            'id' => null,
-            'prenom' => $prenom,
-            'nom' => $nom,
-            'civilite' => $civilite,
-            'mdp' => $mdpCrypt,
-            'email' => $email,
-            'adresse' => $adresse,
-            'telephone' => $telephone
-            
-        ]
-    );
-
-    header('location:Test.php?register=true');
+    header('location:profil_admin.php');
+    $content .= '<div style="background:green;padding:1%;">Vous être connecté en tant que admin</div>';
     exit();
-  }
-}
-if (isset($_GET['register']) && $_GET['register'] == 'true') {
-  $content .= "<div class='alert alert-success'>Inscription validée !</div>";
+  } else {
+    $content .= '<div style="background:red;padding:1%;">Erreur d\'identification</div>';
+  }        
 
+  
 }
+
 
 
 
@@ -134,48 +90,16 @@ if (isset($_GET['register']) && $_GET['register'] == 'true') {
               
 </header>
 <form class=" m-auto p-5" action="" method="post">
-<h2 class="text-center mt-5 mb-5">Inscription</h2>
+<h2 class="text-center mt-5 mb-5">Connexion</h2>
 <?php echo $content; ?>
                 <div class="form-group">
                   <label for="prenom">Prénom</label>
-                  <input type="text" class="form-control" id="prenom" placeholder="Votre prénom" name="prenom" value="<?= $champPrenom; ?>"> <!-- <?= $champPrenom; ?> -->
+                  <input type="text" class="form-control" id="prenom" placeholder="Votre pseudo" name="pseudo"> <!-- <?= $champPrenom; ?> -->
                 </div>
                 <div class="form-group">
-                  <label for="nom">Nom</label>
-                  <input type="text" class="form-control" id="nom" placeholder="Votre nom" name="nom" value="<?= $champNom; ?>"> <!-- <?= $champNom; ?> -->
+                  <label for="mdp">Nom</label>
+                  <input type="text" class="form-control" id="nom" placeholder="Votre mdp" name="mdp"> <!-- <?= $champNom; ?> -->
                 </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Civilité</label>
-                  <select class="form-control" id="exampleFormControlSelect1" name="civilite" value="<?= $champCivilite; ?>"> <!-- <?= $champCivilite; ?> -->
-                    <option>Femme</option>
-                    <option>Homme</option>
-                    <option>Autre</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="mdp">Mot de passe</label>
-                  <input type="password" class="form-control" id="mdp" placeholder="Mot de passe" name="mdp" value="<?= $champMdp; ?>"> <!-- <?= $champMdp; ?> -->
-                </div>
-                <div class="form-group">
-                  <label for="mdp">Confirmation du mot de passe</label>
-                  <input type="password" class="form-control" id="mdp-confirm" placeholder="Mot de passe" name="repeatmdp" value="<?= $champRepeatMdp; ?>">
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="<?= $champEmail; ?>"> <!-- <?= $champEmail; ?> -->
-                </div>
-                <div class="form-group">
-                  <label for="adresse">Adresse Postale</label>
-                  <input type="text" class="form-control" id="adresse" placeholder="Adresse postale" name="adresse" value="<?= $champAdresse; ?>"> <!-- <?= $champAdresse; ?> -->
-                </div>
-                <div class="form-group">
-                  <label for="telephone">Télephone </label>
-                  <input type="tel" class="form-control" id="telephone" placeholder="Votre numéro de téléphone"  name="telephone" value="<?= $champTelephone; ?>"> <!-- <?= $champTelephone; ?> -->
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">S'inscrire à notre newsletter</label>
-                </div>
-            <button type="submit" value="Envoyer les données" name="envoyer" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et s'inscrire sur le site">S'inscrire</button>
+            <button type="submit" value="envoyer" name="envoyer" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et s'inscrire sur le site">S'inscrire</button>
             <p><a href="login.php" aria-label="lien qui mène à la page de connexion">Déja inscrit ?</a>
           </form>
