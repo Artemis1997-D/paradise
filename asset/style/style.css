@@ -160,11 +160,11 @@ blockquote {
   width: 60%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  height: auto;
 }
 
 #hero-inscription {
-  height: 150vh;
-  margin: 10% 0%;
+  height: 100%; 
 }
 
 
@@ -237,7 +237,6 @@ td {
 footer {
   background:  #EDDBC1;
   height: 28vh;
-  margin-top: 20vh;
 }
 
 footer a {
@@ -326,6 +325,10 @@ h3 {
     text-align: center;
     margin: auto;
 }
+#choisir-paradise p {
+  width: 80%;
+}
+/*------Connexion/inscription-------------------*/
 .connexion-inscription {
     width: 90%;
 }
@@ -333,11 +336,7 @@ h3 {
   height: 80vh;
 }
 #hero-inscription {
-  height: 160vh;
+  margin-bottom: 60%;
 }
 
-#choisir-paradise p {
-  width: 80%;
 }
-}
-

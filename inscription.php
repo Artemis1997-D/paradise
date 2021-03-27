@@ -6,7 +6,7 @@ include 'config/template/head.php';
 <!-----------Hero_image_Inscription-------------------------------------------------------------------------------------------------->
         <section class="hero d-flex flex-column justify-content-center text-center" id="hero-inscription" aria-label="hero image de la page d'inscription">
           <!-----------Form_Inscription-------------------------------------------------------------------------------------------------->
-          <form class="connexion-inscription m-auto p-5" action="" method="post">
+          <form class="connexion-inscription mx-auto my-5 p-5" action="" method="post">
             <h2 class="text-center mt-5 mb-5">Inscription</h2>
             <?php echo $content; ?>
                 <div class="form-group">

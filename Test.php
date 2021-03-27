@@ -28,7 +28,7 @@
 
 define('HOSTNAME', 'localhost');
 define('USERNAME', 'root');
-define('PASSWORD', ''); //root pour la MAC et LINUX
+define('PASSWORD', 'root'); //root pour la MAC et LINUX
 define('DATABASE', 'paradise');
 
 $dsn = 'mysql:host=' . HOSTNAME . ';dbname=' . DATABASE;

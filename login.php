@@ -7,7 +7,7 @@ include 'config/template/head.php';
 <!-----------Hero_image_Connexion-------------------------------------------------------------------------------------------------->
         <section class="hero d-flex flex-column justify-content-center text-center" id="hero-login" aria-label="hero image de la page de connexion">
           <!-----------Form_Connexion-------------------------------------------------------------------------------------------------->
-          <form class="connexion-inscription m-auto p-5">
+          <form class="connexion-inscription mx-auto my-5 p-5">
             <h2 class="text-center mt-5 mb-5">Connexion</h2>
               <div class="form-group">
                 <label for="prenom">Prenom</label>
