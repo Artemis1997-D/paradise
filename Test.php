@@ -28,7 +28,7 @@
 
 define('HOSTNAME', 'localhost');
 define('USERNAME', 'root');
-define('PASSWORD', 'root'); //root pour la MAC et LINUX
+define('PASSWORD', ''); //root pour la MAC et LINUX
 define('DATABASE', 'paradise');
 
 $dsn = 'mysql:host=' . HOSTNAME . ';dbname=' . DATABASE;
@@ -44,6 +44,7 @@ try { //on essaie de code...
 
 $content = "";
 
+$champPseudo    = $_POST['pseudo'] ?? null;
 $champPrenom    = $_POST['prenom'] ?? null;
 $champNom     = $_POST['nom'] ?? null;
 $champCivilite    = $_POST['civilite'] ?? null;
@@ -93,8 +94,8 @@ if (isset($_POST['envoyer'])) {
 <h2 class="text-center mt-5 mb-5">Connexion</h2>
 <?php echo $content; ?>
                 <div class="form-group">
-                  <label for="prenom">Prénom</label>
-                  <input type="text" class="form-control" id="prenom" placeholder="Votre pseudo" name="pseudo"> <!-- <?= $champPrenom; ?> -->
+                  <label for="pseudo">Pseudo</label>
+                  <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo" name="pseudo"> <!-- <?= $champPseudo; ?> -->
                 </div>
                 <div class="form-group">
                   <label for="mdp">Nom</label>

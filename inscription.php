@@ -10,6 +10,10 @@ include 'config/template/head.php';
             <h2 class="text-center mt-5 mb-5">Inscription</h2>
             <?php echo $content; ?>
                 <div class="form-group">
+                  <label for="pseudo">Pseudo</label>
+                  <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo" name="pseudo" value="<?= $champPseudo; ?>"> <!-- <?= $champPseudo; ?> -->
+                </div>
+                <div class="form-group">
                   <label for="prenom">Prénom</label>
                   <input type="text" class="form-control" id="prenom" placeholder="Votre prénom" name="prenom" value="<?= $champPrenom; ?>"> <!-- <?= $champPrenom; ?> -->
                 </div>

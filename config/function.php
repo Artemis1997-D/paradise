@@ -1,9 +1,30 @@
 <?php
 /*---------------------------Formulaire Inscription---------------------*/
 
+$resultat='';
+
 if (isset($_POST['envoyer']) && $_POST['envoyer'] == "Envoyer les données") {
 
   extract($_POST);
+
+  if(empty($pseudo)){
+    $content .= "<div class='alert alert-danger'>Le champ pseudo est vide</div>";
+  } elseif (iconv_strlen($pseudo) < 3 || iconv_strlen($pseudo) > 25) {
+    $content .= "<div class='alert alert-danger'>Votre pseudo doit être compris entre 3 et 25 caractères</div>";
+  } elseif (preg_match('/[A-Z]/', $pseudo)) {
+    $content .= "<div class='alert alert-danger'>Votre pseudo ne dois pas contenir de lettre majuscule</div>";
+  } elseif (preg_match('/[%!?*]/', $pseudo)) {
+    $content .= "<div class='alert alert-danger'>Votre pseudo ne dois pas comporter de caractères spéciaux</div>";
+  } elseif (isset($pseudo)) {
+    $req = $pdo->prepare('SELECT * FROM membre WHERE `pseudo` = :pseudo');
+    $req->execute(array('pseudo'=> $pseudo));
+    $resultat=$req->fetch();
+
+    if($resultat) {
+      $content .= "<div class='alert alert-danger'>Pseudo déjà utilisé</div>";
+    }
+
+  }
 
   if(empty($prenom)){
     $content .= "<div class='alert alert-danger'>Le champ prenom est vide</div>";
@@ -46,12 +67,13 @@ if (isset($_POST['envoyer']) && $_POST['envoyer'] == "Envoyer les données") {
   if (empty($content)) {
     $mdpCrypt = password_hash($mdp, PASSWORD_DEFAULT);
 
-    $queryInsert = "INSERT INTO `membre`(`id`, `prenom`, `nom`, `civilite`, `mdp`, `email`, `adresse`, `telephone`) VALUES (:id,:prenom,:nom, :civilite, :mdp, :email, :adresse, :telephone)";
+    $queryInsert = "INSERT INTO `membre`(`id`, `pseudo`, `prenom`, `nom`, `civilite`, `mdp`, `email`, `adresse`, `telephone`) VALUES (:id, :pseudo, :prenom, :nom, :civilite, :mdp, :email, :adresse, :telephone)";
 
     $reqPrep = $pdo->prepare($queryInsert);
     $reqPrep->execute(
         [
             'id' => null,
+            'pseudo' => $pseudo,
             'prenom' => $prenom,
             'nom' => $nom,
             'civilite' => $civilite,
