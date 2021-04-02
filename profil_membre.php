@@ -11,6 +11,8 @@ if($_SESSION['user']['statut'] == 1) {
     header('location:profil_admin.php?connect=forbidden');
     exit();
 } 
+
+var_dump($_SESSION);
 ?>
                 </header>
                 <section class="member-profil p-5">
@@ -22,15 +24,15 @@ if($_SESSION['user']['statut'] == 1) {
                             <div class="coordonnees pl-5">
                                 <div>
                                     <h3>Adresse postale</h3>
-                                    <p>4 rue des fleurs, <br>94790<br>La ville fleurie<br></p>
+                                    <p><?= $_SESSION['user']['adresse']; ?></p>
                                 </div>
                                 <div>
                                     <h3>Adresse email</h3>
-                                    <p>jacques.prevert@gmail.com</p>
+                                    <p><?= $_SESSION['user']['email']; ?></p>
                                 </div>
                                 <div>
                                     <h3>Numéro de téléphone</h3>
-                                    <p>06 78 44 65 09</p>
+                                    <p>+33 <?= $_SESSION['user']['telephone']; ?></p>
                                 </div> 
                             </div>
                         </article>

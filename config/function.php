@@ -85,7 +85,13 @@ if (isset($_POST['envoyer']) && $_POST['envoyer'] == "Envoyer les données") {
         ]
     );
     $_SESSION['user']['pseudo'] = $pseudo;
-    $_SESSION['user']['mdp'] = $mdp;
+    $_SESSION['user']['prenom'] = $prenom;
+    $_SESSION['user']['nom'] = $nom;
+    $_SESSION['user']['civilite'] = $civilite;
+    $_SESSION['user']['mdp'] = $mdpCrypt;
+    $_SESSION['user']['email'] = $email;
+    $_SESSION['user']['adresse'] = $adresse;
+    $_SESSION['user']['telephone'] = $telephone;
     $_SESSION['user']['statut'] = 0;
     header('location:profil_membre.php?register=true');
     exit();
@@ -140,7 +146,13 @@ if(isset($_POST['pseudo']) && isset($_POST['mdp'])) {
         if($resultat!=0) {
             if (password_verify($mdp, $resultat['mdp'])) {
               $_SESSION['user']['pseudo'] = $pseudo;
-              $_SESSION['user']['mdp'] = $mdp;
+              $_SESSION['user']['mdp'] = $resultat['mdp'];
+              $_SESSION['user']['prenom'] = $resultat['prenom'];
+              $_SESSION['user']['nom'] = $resultat['nom'];
+              $_SESSION['user']['civilite'] = $resultat['civilite'];
+              $_SESSION['user']['email'] = $resultat['email'];
+              $_SESSION['user']['adresse'] = $resultat['adresse'];
+              $_SESSION['user']['telephone'] = $resultat['telephone'];
               $_SESSION['user']['statut'] = 0;
             header('Location: profil_membre.php?login=true');
             exit();
