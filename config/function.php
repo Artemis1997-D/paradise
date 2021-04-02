@@ -19,7 +19,7 @@ if (isset($_POST['envoyer']) && $_POST['envoyer'] == "Envoyer les données") {
     $req = $pdo->prepare('SELECT * FROM membre WHERE `pseudo` = :pseudo');
     $req->execute(array('pseudo'=> $pseudo));
     $resultat=$req->fetch();
-
+// Vérification :
     if($resultat) {
       $content .= "<div class='alert alert-danger'>Pseudo déjà utilisé</div>";
     }
@@ -84,8 +84,10 @@ if (isset($_POST['envoyer']) && $_POST['envoyer'] == "Envoyer les données") {
             
         ]
     );
-
-    header('location:inscription.php?register=true');
+    $_SESSION['user']['pseudo'] = $pseudo;
+    $_SESSION['user']['mdp'] = $mdp;
+    $_SESSION['user']['statut'] = 0;
+    header('location:profil_membre.php?register=true');
     exit();
   }
 }
@@ -94,9 +96,68 @@ if (isset($_GET['register']) && $_GET['register'] == 'true') {
 
 }
 
+if (isset($_GET['login']) && $_GET['login'] == 'true') {
+  $content .= "<div class='alert alert-success'>Connexion réussis !</div>";
+}
 
-/*-------------------------------------*/
+if(isset($_GET['access']) && $_GET['access'] == 'forbidden') 
+{
+  $content .= "<div class='alert alert-danger'>Vous ne pouvez pas acceder à cette page, vous devez vous inscrire ou vous connecter !</div>";
+}
 
+if(isset($_GET['connect']) && $_GET['connect'] == 'forbidden') 
+{
+  $content .= "<div class='alert alert-danger'>Votre statut ne vous permet pas d'accéder à cette page</div>";
+}
+
+
+/*------------------------------------Formulaire de connexion et sessions --------------------*/
+
+
+
+if(isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+  
+  extract($_POST);
+    $mdpCrypt = password_hash($mdp, PASSWORD_DEFAULT);
+    $pseudoAdmin = "admin";
+    $mdpAdmin = "admin";
+    
+    if (($pseudoAdmin == $pseudo) && ($mdpAdmin == $mdp)){
+      $_SESSION['user']['pseudo'] = $pseudo;
+      $_SESSION['user']['mdp'] = $mdp;
+      $_SESSION['user']['statut'] = 1;
+      header('location:profil_admin.php?login=true');
+      exit();
+
+    } elseif ($pseudo !== "" && $mdp !== "") {
+      $req = $pdo->prepare('SELECT * FROM membre WHERE `pseudo` = :pseudo');
+      $req->execute(array(':pseudo'=> $pseudo ));
+      $resultat=$req->fetch();
+        if($resultat!=0) {
+            if (password_verify($mdp, $resultat['mdp'])) {
+              $_SESSION['user']['pseudo'] = $pseudo;
+              $_SESSION['user']['mdp'] = $mdp;
+              $_SESSION['user']['statut'] = 0;
+            header('Location: profil_membre.php?login=true');
+            exit();
+        
+            } else {
+              $content .= '<div style="background:tomato;padding:2%;">Mot de passe incorrect</div>';
+            }
+
+           
+        }
+        else
+        {
+          $content .= '<div style="background:tomato;padding:2%;">Utilisateur ou mot de passe incorrect</div>';
+        }
+    }
+    else
+    {
+      $content .= '<div style="background:tomato;padding:2%;">Utilisateur ou mot de passe vide</div>';
+    }
+
+}
 
 
 ?>

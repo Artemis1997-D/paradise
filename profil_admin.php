@@ -1,5 +1,15 @@
 <?php 
 include 'config/template/head.php'; 
+if(!isset($_SESSION['user']))
+{
+  header('location:login.php?access=forbidden');
+  exit();
+}
+
+if($_SESSION['user']['statut'] == 0) {
+      header('location:profil_membre.php?connect=forbidden');
+      exit();
+} 
 ?>
                 </header>
                 <div class="gestion-ajout d-flex flex-column justify-content-center p-2">

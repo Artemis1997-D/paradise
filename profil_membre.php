@@ -1,5 +1,16 @@
 <?php 
 include 'config/template/head.php'; 
+
+if(!isset($_SESSION['user']))
+{
+  header('location:login.php?access=forbidden');
+  exit();
+}
+
+if($_SESSION['user']['statut'] == 1) {
+    header('location:profil_admin.php?connect=forbidden');
+    exit();
+} 
 ?>
                 </header>
                 <section class="member-profil p-5">

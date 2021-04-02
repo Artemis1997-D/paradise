@@ -1,25 +1,35 @@
-<?php 
-include 'config/template/head.php'; 
+<?php include 'config/template/head.php'; 
+
+if(isset($_SESSION['user'])) {
+  if($_SESSION['user']['statut'] == 1) {
+    header('location:profil_admin.php?connect=forbidden');
+    exit();
+  } else {
+    header('location:profil_membre.php?connect=forbidden');
+    exit();
+  }
+}
+
 
 ?>
-        </header>
 
-<!-----------Hero_image_Connexion-------------------------------------------------------------------------------------------------->
-        <section class="hero d-flex flex-column justify-content-center text-center" id="hero-login" aria-label="hero image de la page de connexion">
-          <!-----------Form_Connexion-------------------------------------------------------------------------------------------------->
-          <form class="connexion-inscription mx-auto my-5 p-5">
-            <h2 class="text-center mt-5 mb-5">Connexion</h2>
-              <div class="form-group">
-                <label for="prenom">Prenom</label>
-                <input type="text" class="form-control" id="pseudo" name="prenom" placeholder="Entrez votre pseudo">
-              </div>
-              <div class="form-group">
-                <label for="mdp">Mot de passe</label>
-                <input type="text" class="form-control" id="mdp" name="mdp" placeholder="Entrez votre mot de passe">
-              </div>
-            <button type="submit" class="btn btn-primary" value="envoyer" name="envoyer" id="btn-login" aria-label="bouton qui permet de valider le formulaire et de se connecter">Se connecter</button>
-            <p><a href="#">Mot de passe oublié</a>
-            <p> Nouveau chez Paradise ? <a href="inscription.php">Inscrivez vous</a>
+              
+</header>
+<section class="hero d-flex flex-column justify-content-center text-center" id="hero-login" aria-label="hero image de la page de connexion">
+<form class="connexion-inscription mx-auto my-5 p-5" action="" method="post">
+<h2 class="text-center mt-5 mb-5">Connexion</h2>
+<?php echo $content; ?>
+
+                <div class="form-group">
+                  <label for="pseudo">Pseudo</label>
+                  <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo" name="pseudo" value="<?= $champPseudo; ?>"> <!--  -->
+                </div>
+                <div class="form-group">
+                  <label for="mdp">Mot de passe</label>
+                  <input type="password" class="form-control" id="mdp" placeholder="Votre mdp" name="mdp" value="<?= $champMdp; ?>"> <!--  -->
+                </div>
+            <button type="submit" value="envoyer" name="envoyer" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et se connecter au site">Se connecter</button>
+            <p><a href="login.php" aria-label="lien qui mène à la page de connexion">Déja inscrit ?</a>
           </form>
-        </section>
-<?php include 'config/template/footer.php'; ?>
+          </section>
+          <?php include 'config/template/footer.php'; ?>

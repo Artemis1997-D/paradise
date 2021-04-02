@@ -1,5 +1,17 @@
-<?php 
-include 'config/template/head.php'; 
+<?php include 'config/template/head.php'; 
+
+if(isset($_SESSION['user'])) {
+  if($_SESSION['user']['statut'] == 1) {
+    header('location:profil_admin.php?connect=forbidden');
+    exit();
+  } else {
+    header('location:profil_membre.php?connect=forbidden');
+    exit();
+  }
+}
+
+
+
 ?>
         </header>
 

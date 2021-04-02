@@ -1,3 +1,8 @@
+<?php session_start(); 
+
+
+?>
+
 <!DOCTYPE html>
     <html lang="fr">
         <head>
@@ -26,19 +31,10 @@
                 </nav>
 <?php 
 
-define('HOSTNAME', 'localhost');
-define('USERNAME', 'root');
-define('PASSWORD', ''); //root pour la MAC et LINUX
-define('DATABASE', 'paradise');
-
-$dsn = 'mysql:host=' . HOSTNAME . ';dbname=' . DATABASE;
-
-try { //on essaie de code...
-    $pdo = new PDO($dsn, USERNAME, PASSWORD);
-} catch (PDOException $e) { //...en cas d'erreur on la capture
-    die('<ul><li>Erreur sur le fichier : ' . $e->getFile() . '</li><li>Erreur à la ligne ' . $e->getLine() . '</li><li>Message d\'erreur : ' . $e->getMessage() . '</li></ul>');
+if(isset($_SESSION['user'])) {
+  header("Location:profil_membre.php?=forbidden");
+  exit();
 }
-
 
 //variable d'affichage etc.
 
@@ -57,7 +53,7 @@ $champTelephone       = $_POST['telephone'] ?? null;
 
 
 
-if (isset($_POST['envoyer'])) {
+/*if (isset($_POST['envoyer'])) {
 
   extract($_POST);
 
@@ -78,11 +74,78 @@ if (isset($_POST['envoyer'])) {
 
   
 }
+*/
+  define('HOSTNAME', 'localhost');
+  define('USERNAME', 'root');
+  define('PASSWORD', ''); //root pour la MAC et LINUX
+  define('DATABASE', 'paradise');
+  
+  $dsn = 'mysql:host=' . HOSTNAME . ';dbname=' . DATABASE;
+  
+  try { //on essaie de code...
+      $pdo = new PDO($dsn, USERNAME, PASSWORD);
+  } catch (PDOException $e) { //...en cas d'erreur on la capture
+      die('<ul><li>Erreur sur le fichier : ' . $e->getFile() . '</li><li>Erreur à la ligne ' . $e->getLine() . '</li><li>Message d\'erreur : ' . $e->getMessage() . '</li></ul>');
+  }
+
+  if(isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+  
+  extract($_POST);
+    $mdpCrypt = password_hash($mdp, PASSWORD_DEFAULT);
+    $pseudoAdmin = "admin";
+    $mdpAdmin = "admin";
+    
+    if (($pseudoAdmin == $pseudo) && ($mdpAdmin == $mdp)){
+      $_SESSION['user']['pseudo'] = $pseudo;
+      $_SESSION['user']['mdp'] = $mdp;
+      $_SESSION['user']['statut'] = 1;
+      header('location:profil_admin.php?login=true');
+      exit();
+
+    } elseif ($pseudo !== "" && $mdp !== "") {
+      $req = $pdo->prepare('SELECT * FROM membre WHERE `pseudo` = :pseudo');
+      $req->execute(array(':pseudo'=> $pseudo ));
+      $resultat=$req->fetch();
+        if($resultat!=0) {
+            if (password_verify($mdp, $resultat['mdp'])) {
+              $_SESSION['user']['pseudo'] = $pseudo;
+              $_SESSION['user']['mdp'] = $mdp;
+              $_SESSION['user']['statut'] = 0;
+            header('Location: profil_membre.php?login=true');
+            exit();
+        
+            } else {
+              $content .= '<div style="background:tomato;padding:2%;">Mot de passe incorrect</div>';
+            }
+
+           
+        }
+        else
+        {
+          $content .= '<div style="background:tomato;padding:2%;">Utilisateur ou mot de passe incorrect</div>';
+        }
+    }
+    else
+    {
+      $content .= '<div style="background:tomato;padding:2%;">Utilisateur ou mot de passe vide</div>';
+    }
+
+}
 
 
+ // fermer la connexion
 
+ /*elseif (isset($pseudo)) {
+  $req = $pdo->prepare('SELECT * FROM membre WHERE `pseudo` = :pseudo');
+  $req->execute(array('pseudo'=> $pseudo));
+  $resultat=$req->fetch();
+  var_dump($resultat[1]);
+  var_dump($pseudo);
 
-
+// Vérification :
+  if($resultat[1] == $pseudo) {
+    $content .= "<div class='alert alert-danger'>Pseudo déjà utilisé</div>";
+  } */
 
 
 
@@ -90,17 +153,22 @@ if (isset($_POST['envoyer'])) {
 
               
 </header>
-<form class=" m-auto p-5" action="" method="post">
+<section class="hero d-flex flex-column justify-content-center text-center" id="hero-login" aria-label="hero image de la page de connexion">
+<form class="connexion-inscription mx-auto my-5 p-5" action="" method="post">
 <h2 class="text-center mt-5 mb-5">Connexion</h2>
 <?php echo $content; ?>
+
                 <div class="form-group">
                   <label for="pseudo">Pseudo</label>
-                  <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo" name="pseudo"> <!-- <?= $champPseudo; ?> -->
+                  <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo" name="pseudo" value="<?= $champPseudo; ?>"> <!--  -->
                 </div>
                 <div class="form-group">
-                  <label for="mdp">Nom</label>
-                  <input type="text" class="form-control" id="nom" placeholder="Votre mdp" name="mdp"> <!-- <?= $champNom; ?> -->
+                  <label for="mdp">Mot de passe</label>
+                  <input type="password" class="form-control" id="mdp" placeholder="Votre mdp" name="mdp" value="<?= $champMdp; ?>"> <!--  -->
                 </div>
             <button type="submit" value="envoyer" name="envoyer" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et s'inscrire sur le site">S'inscrire</button>
             <p><a href="login.php" aria-label="lien qui mène à la page de connexion">Déja inscrit ?</a>
           </form>
+          <a class="deconnexion d-flex py-5 px-0 m-auto" href="deconnexion.php" aria-label="lien qui permet de se déconnecter">Déconnexion</a>
+          </section>
+          <?php include 'config/template/footer.php'; ?>

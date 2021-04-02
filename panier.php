@@ -1,5 +1,12 @@
 <?php 
 include 'config/template/head.php'; 
+
+if(!isset($_SESSION['user']))
+{
+  header('location:page1.php?access=forbidden');
+  exit();
+}
+
 ?>
         </header>
         <section class="content">
