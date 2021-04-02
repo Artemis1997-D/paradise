@@ -97,7 +97,11 @@ if (isset($_GET['register']) && $_GET['register'] == 'true') {
 }
 
 if (isset($_GET['login']) && $_GET['login'] == 'true') {
-  $content .= "<div class='alert alert-success'>Connexion réussis !</div>";
+  if($_SESSION['user']['statut'] == 1 ) {
+    $content .= "<div class='alert alert-success'>Connexion réussis ! Vous êtes connecté en tant qu'administrateur</div>";
+  } else {
+    $content .= "<div class='alert alert-success'>Connexion réussis ! Vous êtes connecté en tant que membre</div>";
+  }
 }
 
 if(isset($_GET['access']) && $_GET['access'] == 'forbidden') 

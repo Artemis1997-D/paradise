@@ -15,7 +15,7 @@ if($_SESSION['user']['statut'] == 1) {
                 </header>
                 <section class="member-profil p-5">
                 <?php echo $content; ?>
-                    <h2 class="text-center">Bienvenue Jacques</h2>
+                    <h2 class="text-center">Bienvenue <?= $_SESSION['user']['pseudo']; ?></h2>
                         <article class="card">
                             <h3 class="m-auto"> Vos coordonnées</h3>
                             <hr>
