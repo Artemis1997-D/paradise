@@ -12,7 +12,6 @@ if($_SESSION['user']['statut'] == 1) {
     exit();
 } 
 
-var_dump($_SESSION);
 ?>
                 </header>
                 <section class="member-profil p-5">

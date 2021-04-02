@@ -66,7 +66,7 @@ if(isset($_SESSION['user'])) {
                   <label class="form-check-label" for="exampleCheck1">S'inscrire à notre newsletter</label>
                 </div>
             <button type="submit" value="Envoyer les données" name="envoyer" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et s'inscrire sur le site">S'inscrire</button>
-            <p><a href="login.php" aria-label="lien qui mène à la page de connexion">Déja inscrit ?</a>
+            <p><a href="login.php" aria-label="lien qui mène à la page de connexion">Déja inscrit ? Connectez vous !</a>
           </form>
         </section>
 <?php include 'config/template/footer.php'; ?>
