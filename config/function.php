@@ -97,16 +97,16 @@ if (isset($_POST['envoyer']) && $_POST['envoyer'] == "Envoyer les données") {
     exit();
   }
 }
-if (isset($_GET['register']) && $_GET['register'] == 'true') {
+if ((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user']['statut'] == 0)) {
   $content .= "<div class='alert alert-success'>Inscription validée !</div>";
 
 }
 
 if (isset($_GET['login']) && $_GET['login'] == 'true') {
   if($_SESSION['user']['statut'] == 1 ) {
-    $content .= "<div class='alert alert-success'>Connexion réussis ! Vous êtes connecté en tant qu'administrateur</div>";
+    $content .= "<div class='alert alert-success'>Connexion réussie ! Vous êtes connecté en tant qu'administrateur</div>";
   } else {
-    $content .= "<div class='alert alert-success'>Connexion réussis ! Vous êtes connecté en tant que membre</div>";
+    $content .= "<div class='alert alert-success'>Connexion réussie ! Vous êtes connecté en tant que membre</div>";
   }
 }
 
@@ -175,7 +175,142 @@ if(isset($_POST['pseudo']) && isset($_POST['mdp'])) {
 
 }
 
+//------------Enregistrement_produit------------------------
+if(isset($_POST['ajouter']) && $_POST['ajouter'] == "Ajouter un produit") {
+    
+  extract($_POST);
 
-?>
+  if(empty($photo_hero)) {
+    $content .= "<div class='alert alert-danger'>Aucun fichier choisi pour le hero-image</div>";
+  }
 
-              
+  if(empty($photo_min1)) {
+    $content .= "<div class='alert alert-danger'>Aucune image pour la 1ère miniature du produit</div>";
+  }
+
+  if(empty($photo_min2)) {
+    $content .= "<div class='alert alert-danger'>Aucune image pour la 2ème miniature du produit</div>";
+  }
+  
+  if(empty($photo_min3)) {
+    $content .= "<div class='alert alert-danger'>Aucune image pour la 3ère miniature du produit</div>";
+  }
+
+  if(empty($nom_produit)) {
+    $content .= "<div class='alert alert-danger'>Le champ nom du produit est vide</div>";
+  }
+
+  if(empty($categorie)) {
+    $content .= "<div class='alert alert-danger'>Le champ catégorie du produit est vide</div>";
+  }
+
+  if(empty($description)) {
+    $content .= "<div class='alert alert-danger'>Le champ description du produit est vide</div>";
+  }
+
+  if(empty($localisation)) {
+    $content .= "<div class='alert alert-danger'>Le champ localisation du produit est vide</div>";
+  }
+
+  if(empty($superficie)) {
+    $content .= "<div class='alert alert-danger'>Le champ superficie du produit est vide</div>";
+  }
+
+  if(empty($prix)) {
+    $content .= "<div class='alert alert-danger'>Le champ prix du produit est vide</div>";
+  }
+ 
+  if(empty($stock)) {
+    $content .= "<div class='alert alert-danger'>Le champ stock du produit est vide</div>";
+  }
+
+  if((empty($content)) || ($content == "<div class='alert alert-success'>Connexion réussie ! Vous êtes connecté en tant qu'administrateur</div>")) {
+
+    $queryInsert = "INSERT INTO `produits`(`id_produit`, `photo_hero`, `photo_min1`, `photo_min2`, `photo_min3`, `nom_produit`, `categorie`, `description`, `localisation`, `superficie`, `prix`, `stock`) VALUES (:id_produit, :photo_hero, :photo_min1, :photo_min2, :photo_min3, :nom_produit, :categorie, :description, :localisation, :superficie, :prix, :stock)";
+
+    $reqPrep = $pdo->prepare($queryInsert);
+    $reqPrep->execute(
+      [
+        'id_produit'   => null,
+        'photo_hero'   => $photo_hero,
+        'photo_min1'   => $photo_min1,
+        'photo_min2'   => $photo_min2,
+        'photo_min3'   => $photo_min3,
+        'nom_produit'  => $nom_produit,
+        'categorie'    => $categorie,
+        'description'  => $description,
+        'localisation' => $localisation,
+        'superficie'   => $superficie,
+        'prix'         => $prix,
+        'stock'        => $stock,
+      ]
+      );
+      $_SESSION['user']['photo_hero']   = $photo_hero;
+      $_SESSION['user']['photo_min1']   = $photo_min1;
+      $_SESSION['user']['photo_min2']   = $photo_min2;
+      $_SESSION['user']['photo_min3']   = $photo_min3;
+      $_SESSION['user']['nom_produit']  = $nom_produit;
+      $_SESSION['user']['categorie']    = $categorie;
+      $_SESSION['user']['description']  = $description;
+      $_SESSION['user']['localisation'] = $localisation;
+      $_SESSION['user']['superficie']   = $superficie;
+      $_SESSION['user']['prix']         = $prix;
+      $_SESSION['user']['stock']        = $stock;
+      $_SESSION['user']['statut']       = 1;
+      header('location:profil_admin.php?register=true');
+      exit();
+  }
+}
+
+if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user']['statut'] == 1) ) {
+  $content .= "<div class='alert alert-success'>Produit enregistré !</div>";
+ }
+
+
+ //------------------------Affichage_des_produits--------------------
+  
+
+ if((isset($_SESSION['user'])) && ($_SESSION['user']['statut'] == 1) ) {
+ $connection = mysqli_connect("localhost", "root", "root", "paradise");
+ $resultat = mysqli_query($connection, "SELECT nom_produit, categorie, localisation, prix, stock  FROM produits");
+ 
+ $liste_produits .= 'Nombre de produit(s) dans la boutique : ' . $resultat->num_rows . '<br>';
+ $liste_produits .= '<table class="text-center" border="1"><tr> ';
+ while($colonne = $resultat->fetch_field()) {
+
+   $liste_produits .= '<th>' . $colonne->name . '</th>';
+ }
+
+ $liste_produits .= '<th>Modification</th>';
+ $liste_produits .= '<th>Suppression</th>';
+ $liste_produits .= '</tr>';
+
+ while ($ligne = $resultat->fetch_assoc()) {
+   $liste_produits .= '<tr>';
+   foreach ($ligne as $indice => $information) {
+       $liste_produits .= '<td class="text-center">' . $information . '</td>';
+     }
+     $liste_produits .= '<td class="text-center"><a href="?action=modification&id_produit=' . '"><img src="../paradise/asset/img/edit-button.svg" width="25px" height="25px"></a></td>';
+     $liste_produits .='<td class="text-center"><a href="?action=suppression&id_produit=' . '" OnClick="return(confirm(\'En êtes vous certain ?\'));"><img src="../paradise/asset/img/delete.svg" width="25px" height="25px"></a></td>';
+   } 
+     $liste_produits .='</tr></table><br>';
+} 
+
+
+//-------------------------Suppresion_des_produits--------------------------
+
+if(isset($_GET['action']) && $_GET['action'] == "suppresion") {
+  $resultat = mysqli_query($connection, "SELECT * FROM produits WHERE id_produit=$_GET[id_produit]");
+  $produit_a_supprimer = $resultat->fetch_assoc();
+  
+
+  
+}
+
+
+
+
+
+
+
+//--------------------------Modification_des_produits----------------------
