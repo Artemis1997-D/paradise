@@ -275,13 +275,12 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
  $pdo = mysqli_connect("localhost", "root", "root", "paradise");
 
 // requête sql pour avoir les infos des produits
- $resultat = mysqli_query($pdo, "SELECT nom_produit, categorie, localisation, prix, stock  FROM produits");
+ $resultat = mysqli_query($pdo, "SELECT id_produit, nom_produit, categorie, localisation, prix, stock  FROM produits");
 
  $liste_produits .= 'Nombre de produit(s) dans la boutique : ' . $resultat->num_rows . '<br>';
  // début du tableau permettant d'avoir la liste des produits
  $liste_produits .= '<table class="text-center" border="1"><tr> ';
  while($colonne = $resultat->fetch_field()) {
-
 
    $liste_produits .= '<th>' . $colonne->name . '</th>';
  }
@@ -407,8 +406,6 @@ if (isset($_GET['modify'])) {
 
 
 
-
-//--------------------------Modification_des_produits----------------------
 
 
 
