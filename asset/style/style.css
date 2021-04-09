@@ -10,6 +10,10 @@ body {
   background-color: #eaf2ff;
 }
 
+main {
+  height: 100vh;
+}
+
 a {
   color: blue;
 }
@@ -105,20 +109,21 @@ h5 {
   height: 55%;
 }
 
+
+
+
 /*----------Fiche_produit 1/2/3*/
 
+.hero-produit {
+  
+  height: 100vh;
+  background-size: cover;
+}
 
 .hero-produit h2{
   font-size: 80px;
   color: white;
   text-shadow: 2px 2px 0px black;
-}
-
-
-#hero-produit1 {
-  background-image: url("../img_produit/isla-panama-big.webp");
-  height: 100vh;
-  background-size: cover;
 }
 
 .images-produit {

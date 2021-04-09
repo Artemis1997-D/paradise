@@ -19,7 +19,7 @@
                   <h6 class="card-title">Panama</h6>
                   <p class="card-text">290 m2</p>
                   <p class="card-text">295 812€</p>
-                  <button type="button" class="btn btn-info"><a href="fiche_produit1.php">Voir</a></button>
+                  <button type="button" class="btn btn-info"><a href="fiche_produit.php">Voir</a></button>
                 </div>
             </article>
             <article class="card">
@@ -53,6 +53,6 @@
                 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
                 Donec viverra ante in sodales rhoncus. Cras enim est, malesuada id lectus gravida, tempus posuere diam. </p>
             </div>
-        </section>
+        </section>   
 <?php include 'config/template/footer.php'; ?>
 

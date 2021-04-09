@@ -270,17 +270,21 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
  //------------------------Affichage_des_produits--------------------
   
 
- if((isset($_SESSION['user'])) && ($_SESSION['user']['statut'] == 1) ) {
- $connection = mysqli_connect("localhost", "root", "root", "paradise");
- $resultat = mysqli_query($connection, "SELECT nom_produit, categorie, localisation, prix, stock  FROM produits");
- 
+ if((isset($_SESSION['user'])) ) {
+// connexion à la base de données
+ $pdo = mysqli_connect("localhost", "root", "root", "paradise");
+
+// requête sql pour avoir les infos des produits
+ $resultat = mysqli_query($pdo, "SELECT nom_produit, categorie, localisation, prix, stock  FROM produits");
+
  $liste_produits .= 'Nombre de produit(s) dans la boutique : ' . $resultat->num_rows . '<br>';
+ // début du tableau permettant d'avoir la liste des produits
  $liste_produits .= '<table class="text-center" border="1"><tr> ';
  while($colonne = $resultat->fetch_field()) {
 
    $liste_produits .= '<th>' . $colonne->name . '</th>';
  }
-
+// ajout d'une colonne modification et suppression
  $liste_produits .= '<th>Modification</th>';
  $liste_produits .= '<th>Suppression</th>';
  $liste_produits .= '</tr>';
@@ -299,13 +303,15 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
 
 //-------------------------Suppresion_des_produits--------------------------
 
-if(isset($_GET['action']) && $_GET['action'] == "suppresion") {
-  $resultat = mysqli_query($connection, "SELECT * FROM produits WHERE id_produit=$_GET[id_produit]");
-  $produit_a_supprimer = $resultat->fetch_assoc();
-  
+
+
 
   
-}
+
+
+
+
+
 
 
 
@@ -314,3 +320,14 @@ if(isset($_GET['action']) && $_GET['action'] == "suppresion") {
 
 
 //--------------------------Modification_des_produits----------------------
+
+
+
+
+
+
+
+
+
+
+//--------------------------La_page_nos_produits--------------------------------------
