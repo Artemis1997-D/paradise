@@ -29,55 +29,44 @@
                     <a  class="nav-link" href="panier.php" aria-label="lien pour accéder au panier">Mon panier</a>
                     <a  class="nav-link" href="profil_membre.php" aria-label="lien pour accéder à son compte">Mon compte</a>
                 </nav>
+                </header>
+
 <?php 
 
-if(isset($_SESSION['user'])) {
-  header("Location:profil_membre.php?=forbidden");
-  exit();
-}
+
 
 //variable d'affichage etc.
 
 $content = "";
+$liste_produits = "";
 
-$champPseudo    = $_POST['pseudo'] ?? null;
-$champPrenom    = $_POST['prenom'] ?? null;
-$champNom     = $_POST['nom'] ?? null;
-$champCivilite    = $_POST['civilite'] ?? null;
-$champMdp       = $_POST['mdp'] ?? null;
-$champRepeatMdp       = $_POST['repeatmdp'] ?? null;
-$champEmail       = $_POST['email'] ?? null;
-$champAdresse       = $_POST['adresse'] ?? null;
-$champTelephone       = $_POST['telephone'] ?? null;
+$champPseudo              = $_POST['pseudo'] ?? null;
+$champPrenom              = $_POST['prenom'] ?? null;
+$champNom                 = $_POST['nom'] ?? null;
+$champCivilite            = $_POST['civilite'] ?? null;
+$champMdp                 = $_POST['mdp'] ?? null;
+$champRepeatMdp           = $_POST['repeatmdp'] ?? null;
+$champEmail               = $_POST['email'] ?? null;
+$champAdresse             = $_POST['adresse'] ?? null;
+$champTelephone           = $_POST['telephone'] ?? null;
+$champHeroimg             = $_POST['photo_hero'] ?? null;
+$champMinimg1             = $_POST['photo_min1'] ?? null;
+$champMinimg2             = $_POST['photo_min2'] ?? null;
+$champMinimg3             = $_POST['photo_min3'] ?? null;
+$champNomProduit          = $_POST['nom_produit'] ?? null;
+$champCategorieProduit    = $_POST['categorie'] ?? null;
+$champDescriptionProduit  = $_POST['description'] ?? null;
+$champLocalisationProduit = $_POST['localisation'] ?? null;
+$champSuperficieProduit   = $_POST['superficie'] ?? null;
+$champPrixProduit         = $_POST['prix'] ?? null;
+$champStockProduit        = $_POST['stock'] ?? null;
 
 
 
 
-/*if (isset($_POST['envoyer'])) {
-
-  extract($_POST);
-
-  $pseudoAdmin = "admin";
-  $mdpAdmin = "Admin1!";
-  
-  if (($pseudoAdmin == $pseudo) && ($mdpAdmin == $mdp)) { //administrateur
-    $_SESSION['user']['pseudo'] = $pseudo;
-    $_SESSION['user']['mdp'] = $mdp;
-    $_SESSION['user']['statut'] = 1;
-
-    header('location:profil_admin.php');
-    $content .= '<div style="background:green;padding:1%;">Vous être connecté en tant que admin</div>';
-    exit();
-  } else {
-    $content .= '<div style="background:red;padding:1%;">Erreur d\'identification</div>';
-  }        
-
-  
-}
-*/
   define('HOSTNAME', 'localhost');
   define('USERNAME', 'root');
-  define('PASSWORD', 'root'); //root pour la MAC et LINUX
+  define('PASSWORD', ''); //root pour la MAC et LINUX
   define('DATABASE', 'paradise');
   
   $dsn = 'mysql:host=' . HOSTNAME . ';dbname=' . DATABASE;
@@ -88,87 +77,6 @@ $champTelephone       = $_POST['telephone'] ?? null;
       die('<ul><li>Erreur sur le fichier : ' . $e->getFile() . '</li><li>Erreur à la ligne ' . $e->getLine() . '</li><li>Message d\'erreur : ' . $e->getMessage() . '</li></ul>');
   }
 
-  if(isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+
+
   
-  extract($_POST);
-    $mdpCrypt = password_hash($mdp, PASSWORD_DEFAULT);
-    $pseudoAdmin = "admin";
-    $mdpAdmin = "admin";
-    
-    if (($pseudoAdmin == $pseudo) && ($mdpAdmin == $mdp)){
-      $_SESSION['user']['pseudo'] = $pseudo;
-      $_SESSION['user']['mdp'] = $mdp;
-      $_SESSION['user']['statut'] = 1;
-      header('location:profil_admin.php?login=true');
-      exit();
-
-    } elseif ($pseudo !== "" && $mdp !== "") {
-      $req = $pdo->prepare('SELECT * FROM membre WHERE `pseudo` = :pseudo');
-      $req->execute(array(':pseudo'=> $pseudo ));
-      $resultat=$req->fetch();
-        if($resultat!=0) {
-            if (password_verify($mdp, $resultat['mdp'])) {
-              $_SESSION['user']['pseudo'] = $pseudo;
-              $_SESSION['user']['mdp'] = $mdp;
-              $_SESSION['user']['statut'] = 0;
-            header('Location: profil_membre.php?login=true');
-            exit();
-        
-            } else {
-              $content .= '<div style="background:tomato;padding:2%;">Mot de passe incorrect</div>';
-            }
-
-           
-        }
-        else
-        {
-          $content .= '<div style="background:tomato;padding:2%;">Utilisateur ou mot de passe incorrect</div>';
-        }
-    }
-    else
-    {
-      $content .= '<div style="background:tomato;padding:2%;">Utilisateur ou mot de passe vide</div>';
-    }
-
-}
-
-
- // fermer la connexion
-
- /*elseif (isset($pseudo)) {
-  $req = $pdo->prepare('SELECT * FROM membre WHERE `pseudo` = :pseudo');
-  $req->execute(array('pseudo'=> $pseudo));
-  $resultat=$req->fetch();
-  var_dump($resultat[1]);
-  var_dump($pseudo);
-
-// Vérification :
-  if($resultat[1] == $pseudo) {
-    $content .= "<div class='alert alert-danger'>Pseudo déjà utilisé</div>";
-  } */
-
-
-
-?>
-
-              
-</header>
-<section class="hero d-flex flex-column justify-content-center text-center" id="hero-login" aria-label="hero image de la page de connexion">
-<form class="connexion-inscription mx-auto my-5 p-5" action="" method="post">
-<h2 class="text-center mt-5 mb-5">Connexion</h2>
-<?php echo $content; ?>
-
-                <div class="form-group">
-                  <label for="pseudo">Pseudo</label>
-                  <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo" name="pseudo" value="<?= $champPseudo; ?>"> <!--  -->
-                </div>
-                <div class="form-group">
-                  <label for="mdp">Mot de passe</label>
-                  <input type="password" class="form-control" id="mdp" placeholder="Votre mdp" name="mdp" value="<?= $champMdp; ?>"> <!--  -->
-                </div>
-            <button type="submit" value="envoyer" name="envoyer" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et s'inscrire sur le site">S'inscrire</button>
-            <p><a href="login.php" aria-label="lien qui mène à la page de connexion">Déja inscrit ?</a>
-          </form>
-          <a class="deconnexion d-flex py-5 px-0 m-auto" href="deconnexion.php" aria-label="lien qui permet de se déconnecter">Déconnexion</a>
-          </section>
-          <?php include 'config/template/footer.php'; ?>

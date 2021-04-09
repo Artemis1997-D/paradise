@@ -25,6 +25,9 @@ if($_SESSION['user']['statut'] == 0) {
                                 <h3>Gestion des produits</h3>
                                 <hr>
                                 <?php echo $liste_produits; ?>
+                                <h3>Modification article</h3>
+                                <hr>
+                                <!-- <?php echo $formulaire; ?> -->
                             </section>
                             <br>
                             <!-----------Section_ajout_article_dans_la_liste_des_produits-------------------------------------------------------------------------------------------------->

@@ -271,12 +271,13 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
   
 
  if((isset($_SESSION['user'])) && ($_SESSION['user']['statut'] == 1) ) {
- $connection = mysqli_connect("localhost", "root", "root", "paradise");
- $resultat = mysqli_query($connection, "SELECT nom_produit, categorie, localisation, prix, stock  FROM produits");
- 
+ $connection = mysqli_connect("localhost", "root", "", "paradise");
+ $resultat = mysqli_query($connection, "SELECT id_produit, nom_produit, categorie, localisation, prix, stock  FROM produits");
+
  $liste_produits .= 'Nombre de produit(s) dans la boutique : ' . $resultat->num_rows . '<br>';
  $liste_produits .= '<table class="text-center" border="1"><tr> ';
  while($colonne = $resultat->fetch_field()) {
+
 
    $liste_produits .= '<th>' . $colonne->name . '</th>';
  }
@@ -286,15 +287,20 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
  $liste_produits .= '</tr>';
 
  while ($ligne = $resultat->fetch_assoc()) {
+
+
    $liste_produits .= '<tr>';
+   
    foreach ($ligne as $indice => $information) {
        $liste_produits .= '<td class="text-center">' . $information . '</td>';
      }
-     $liste_produits .= '<td class="text-center"><a href="?action=modification&id_produit=' . '"><img src="../paradise/asset/img/edit-button.svg" width="25px" height="25px"></a></td>';
-     $liste_produits .='<td class="text-center"><a href="?action=suppression&id_produit=' . '" OnClick="return(confirm(\'En êtes vous certain ?\'));"><img src="../paradise/asset/img/delete.svg" width="25px" height="25px"></a></td>';
+     $id = $ligne['id_produit']; // Récupération de l'id du produit à modifier
+     $liste_produits .= '<td class="text-center"><a href="?modify=' . $id . '" ><img src="asset\img\edit-button.svg" width="25px" height="25px"></a></td>';
+     $liste_produits .='<td class="text-center"><a href="?action=suppression&id_produit=' . '" OnClick="return(confirm(\'En êtes vous certain ?\'));"><img src="asset\img\delete.svg" width="25px" height="25px"></a></td>';
    } 
      $liste_produits .='</tr></table><br>';
 } 
+
 
 
 //-------------------------Suppresion_des_produits--------------------------
@@ -314,3 +320,85 @@ if(isset($_GET['action']) && $_GET['action'] == "suppresion") {
 
 
 //--------------------------Modification_des_produits----------------------
+
+
+if (isset($_GET['modify'])) {
+  $produit = $_GET['modify'];
+  $req = $pdo -> prepare ("SELECT * FROM produits WHERE `id_produit` = :id_produit ");
+  $req->execute(array(':id_produit'=> $produit ));
+  $resultat=$req->fetch();
+  if ($resultat !=0 ) {
+    $formulaire = '<form class="formulaire-ajout-article m-auto p-4" action="" method="post">
+    <div class="form-group">
+    <label for="photo_hero">Choisir limage en hero</label>
+    <input id="photo_hero" type="file" name="photo_hero" value="' . $resultat[1] . '" accept="image/*" multiple>
+</div>
+<div class="form-group">
+    <label for="photo_min1">Choisir la première image miniature pour le produit</label>
+    <input id="photo_min1" type="file" name="photo_min1" value="' . $resultat[2] . '"  accept="image/*" multiple>
+</div>
+<div class="form-group">
+    <label for="photo_min2">Choisir la deuxième image miniature pour le produit</label>
+    <input id="photo_min2" type="file" name="photo_min2" value="' . $resultat[3] . '"  accept="image/*" multiple>
+</div>
+<div class="form-group">
+    <label for="photo_min3">Choisir la troisième image miniature pour le produit</label>
+    <input id="photo_min3" type="file" name="photo_min3" value="' . $resultat[4] . '" accept="image/*" multiple>
+</div>
+<div class="form-group">
+    <label for="nom_produit">Nom du produit</label>
+    <input type="text" class="name-article" name="nom_produit" value="' . $resultat[5] . '"  id="nom_produit" placeholder="Entrer le nom de larticle">
+</div>
+<div class="form-group">
+    <label for="categorie">Catégorie du produit</label>
+    <input type="text" class="categorie-article" name="categorie" value="' . $resultat[6] . '"  id="categorie" placeholder="Entrer la catégorie de larticle">
+</div>
+<div class="form-group">
+    <label for="description">Description</label>
+    <input type="textarea" class="description-article" name="description" value="' . $resultat[7] . '" id="description" placeholder="Présentez en quelques lignes le produit">
+</div>
+<div class="form-group">
+    <label for="localisation">Localisation</label>
+    <input type="text" class="localisation-article" name="localisation" value="' . $resultat[8] . '"  id="localisation" placeholder="Entrez la localisation du produit">
+</div>
+<div class="form-group">
+    <label for="suoerficie">Superficie(m2)</label>
+    <input type="number" class="superficie" name="superficie" value="' . $resultat[9] . '"  id="superficie" placeholder="Entrez la superficie du produit">
+</div>
+<div class="form-group">
+    <label for="prix">Prix</label>
+    <input type="number" class="prix" name="prix" value="' . $resultat[10] . '"  id="prix" placeholder="Entrez le prix du produit à lunité">
+</div>
+<div class="form-group">
+    <label for="stock">Stock</label>
+    <input type="number" class="stock" name="stock" value="' . $resultat[1] . '"  id="stock" placeholder="Entrez le stock">
+</div>
+<button type="submit" class="btn btn-primary" value="Modifier" name="modifier" aria-label="bouton qui permet de modifier un  produit">Modifier</button>
+    </form>';
+  
+  }
+
+  if (isset($_POST['modifier']) && $_POST['modifier'] == "Modifier") {
+    extract($_POST);
+
+    $queryInsert = "UPDATE `produits` SET `id_produit` = :id_produit, `photo_hero` = :photo_hero, `photo_min1` = :photo_min1, `photo_min2` = :photo_min2 , `photo_min3` = :photo_min3 , `nom_produit` = :nom_produit, `categorie` = :categorie, `description` = :description , `localisation` = :localisation, `superficie` = :superficie , `prix` = :prix, `stock` = :stock)";
+
+    $reqPrep = $pdo->prepare($queryInsert);
+    $reqPrep->execute(
+      [
+        'id_produit'   => null,
+        'photo_hero'   => $photo_hero,
+        'photo_min1'   => $photo_min1,
+        'photo_min2'   => $photo_min2,
+        'photo_min3'   => $photo_min3,
+        'nom_produit'  => $nom_produit,
+        'categorie'    => $categorie,
+        'description'  => $description,
+        'localisation' => $localisation,
+        'superficie'   => $superficie,
+        'prix'         => $prix,
+        'stock'        => $stock,
+      ]
+      );
+}
+}
