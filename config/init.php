@@ -20,6 +20,10 @@ try { //on essaie de code...
 
 $content = "";
 $liste_produits = "";
+$nav_cat = "";
+$tt_les_produits = "";
+$donnees = "";
+$contenu_produit = "";
 
 $champPseudo              = $_POST['pseudo'] ?? null;
 $champPrenom              = $_POST['prenom'] ?? null;
