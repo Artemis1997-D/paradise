@@ -28,7 +28,7 @@ if(isset($_SESSION['user'])) {
                   <label for="mdp">Mot de passe</label>
                   <input type="password" class="form-control" id="mdp" placeholder="Votre mdp" name="mdp" value="<?= $champMdp; ?>"> <!--  -->
                 </div>
-            <button type="submit" value="envoyer" name="envoyer" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et se connecter au site">Se connecter</button>
+            <button type="submit" value="login" name="login" class="btn btn-primary" id="btn-inscrire" aria-label="bouton pour valider le formulaire et se connecter au site">Se connecter</button>
             <p><a href="inscription.php" aria-label="lien qui mène à la page d'inscription'">Pas encore de compte ? Inscrivez vous !</a>
           </form>
           </section>          

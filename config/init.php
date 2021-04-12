@@ -4,7 +4,7 @@
 
 define('HOSTNAME', 'localhost');
 define('USERNAME', 'root');
-define('PASSWORD', 'root'); //root pour la MAC et LINUX
+define('PASSWORD', ''); //root pour la MAC et LINUX
 define('DATABASE', 'paradise');
 
 $dsn = 'mysql:host=' . HOSTNAME . ';dbname=' . DATABASE;
@@ -24,6 +24,7 @@ $nav_cat = "";
 $tt_les_produits = "";
 $donnees = "";
 $contenu_produit = "";
+$contenu_panier = "";
 
 $champPseudo              = $_POST['pseudo'] ?? null;
 $champPrenom              = $_POST['prenom'] ?? null;

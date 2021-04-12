@@ -77,6 +77,33 @@ $champStockProduit        = $_POST['stock'] ?? null;
       die('<ul><li>Erreur sur le fichier : ' . $e->getFile() . '</li><li>Erreur à la ligne ' . $e->getLine() . '</li><li>Message d\'erreur : ' . $e->getMessage() . '</li></ul>');
   }
 
+  ?>
+        </header>
+        <section class="content">
+          <h2 class="text-center mt-5 mb-5">Mes commandes</h2>
+            <!-----------Liste_articles_dans_le_panier-------------------------------------------------------------------------------------------------->
+            <article class="article d-flex flex-row m-auto">
+                <img class="image-panier mr-2" src="asset/img_produit/isla-paloma-img1.webp" alt="Isla-Paloma" >
+                <p class="detail d-flex flex-row align-items-start">Isla Paloma<br>Panama<br>295 812€</p>
+                <a href="#">Supprimer</a>
+              </article>
+            <hr class="divider">
+              <article class="article d-flex flex-row m-auto">
+                <img class="image-panier mr-2" src="asset/img_produit/sand-point-road-beach.webp" alt="Bungalow" >
+                <div class="article flex-row">
+                <p class="detail d-flex flex-column align-items-start">Isla Paloma</p>
+                <p class="detail d-flex flex-column align-items-start">Panama</p>
+                <p class="detail d-flex flex-column align-items-start">295 812€</p>
+                </div>
+                <a href="#">Supprimer</a>
+              </article>
+            <hr class="divider">
+              <div class="total d-flex flex-row">
+                <p>Total</p>
+                <p>3 967 989€</p>
+              </div>
+        </section>
+
 
 
   
