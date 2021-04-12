@@ -270,7 +270,7 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
  //------------------------Affichage_des_produits--------------------
   
 
- if((isset($_SESSION['user'])) ) {
+ if (isset($_SESSION['user']) ) {
 // connexion à la base de données
  $pdo = mysqli_connect("localhost", "root", "root", "paradise");
 

@@ -4,6 +4,7 @@ include 'config/template/head.php';
 
 <?php
 //-------------------------------Affichage_des_catégories---------------------------------------------------------------------------------------
+  $pdo = mysqli_connect("localhost", "root", "root", "paradise");
   $categories_produits = mysqli_query($pdo, "SELECT DISTINCT categorie FROM produits");
   $nav_cat .= '<nav class="nav d-flex justify-content-around">';
   // pour chaque catégorie créé à partir du profil admin, un lien est créé dans la page tt les produits
