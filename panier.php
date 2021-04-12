@@ -78,7 +78,7 @@ if(!isset($_SESSION['user']))
                 $contenu_panier .= '<p class="detail d-flex flex-column align-items-start">'.htmlspecialchars($_SESSION['panier']['prixProduit'][$i]).'</p>';
                 $contenu_panier .= '</div>';
                 $contenu_panier .= '<input type="text" size="4" name="q[]" value=" '.htmlspecialchars($_SESSION["panier"]["qteProduit"][$i]). '">';
-                $contenu_panier .= '<a href=" '.htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['nomProduit'][$i])).' ">Supprimer</a>';
+                $contenu_panier .= '<a href=" '.htmlspecialchars("panier.php?action=suppression&n=".rawurlencode($_SESSION['panier']['nomProduit'][$i])).' ">Supprimer</a>';
                 $contenu_panier .= '</article>';
                 $contenu_panier .= '<hr class="divider">';
             }

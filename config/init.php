@@ -18,6 +18,7 @@ try { //on essaie de code...
 
 //variable d'affichage etc.
 
+$quantite=1; 
 $content = "";
 $liste_produits = "";
 $nav_cat = "";

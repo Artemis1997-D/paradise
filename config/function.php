@@ -535,3 +535,4 @@ function compterArticles()
 function supprimePanier(){
   unset($_SESSION['panier']);
 }
+
