@@ -1,5 +1,22 @@
 <?php 
   include 'config/template/head.php';
+
+$meilleurs_produits .= '<div class="card-deck d-flex flex-wrap">';
+$pdo = mysqli_connect("localhost", "root", "root", "paradise");
+$donnees = mysqli_query($pdo, "SELECT id_produit, nom_produit, photo_min1, localisation, superficie, prix FROM produits ORDER BY id_produit DESC limit 3 ");
+
+while ($produit = $donnees->fetch_assoc()) {
+  $meilleurs_produits .='<article class="card">';
+  $meilleurs_produits .= '<img class="card-img-top" alt="'. $produit["nom_produit"] .'" src="'. $produit["photo_min1"] .'">';
+  $meilleurs_produits .= '<div class="card-body">';
+  $meilleurs_produits .= '<h5 class="card-title">' . $produit['nom_produit']  . '</h5>';
+  $meilleurs_produits .= '<h6 class="card-title">' .$produit['localisation'] . '</h6>';
+  $meilleurs_produits .= '<p class="card-text">' . $produit['superficie'] . ' m2</p>';
+  $meilleurs_produits .= '<p class="card-text">' . $produit['prix'] . ' €</p>';
+  $meilleurs_produits .= '<button type="button" class="btn btn-info"><a href="fiche_produit.php?id_produit=' . $produit['id_produit'] . '"aria-label="lien qui mène vers le produit">Voir</a></button>';
+  $meilleurs_produits .= '</div></article>';
+}
+$meilleurs_produits .= '</div>';
 ?>
         </header>
 <!-----------Hero_image_Accueil-------------------------------------------------------------------------------------------------->
@@ -11,38 +28,7 @@
 <!-----------Sélection_de_produits_avec_img_et_caractéristiques_en_card-------------------------------------------------------------------------------------------------->
         <section class="produits d-flex flex-wrap my-5 mx-auto" id="produits" aria-label="présentation des trois meilleurs produits du site">
           <h2 class="text-center">Nos meilleurs articles</h2>
-          <div class="card-deck d-flex flex-wrap">
-            <article class="card">
-              <img class="card-img-top" src="asset/img_produit/isla-panama.webp" alt="maison à Isla Paloma">
-                <div class="card-body">
-                  <h5 class="card-title">Isla Paloma</h5>
-                  <h6 class="card-title">Panama</h6>
-                  <p class="card-text">290 m2</p>
-                  <p class="card-text">295 812€</p>
-                  <button type="button" class="btn btn-info"><a href="fiche_produit.php">Voir</a></button>
-                </div>
-            </article>
-            <article class="card">
-              <img class="card-img-top" src="asset/img_produit/sand-point-road-beach.webp" alt="Sand Point Road Beach">
-                <div class="card-body">
-                  <h5 class="card-title">Sand Point Road Beach</h5>
-                  <h6 class="card-title">Caymant Island</h6>
-                  <p class="card-text">3 700 m2</p>
-                  <p class="card-text">4 287 228€</p>
-                  <button type="button" class="btn btn-info"><a href="#">Voir</a></button>
-                </div>
-            </article>
-            <article class="card">
-              <img class="card-img-top" src="asset/img_produit/dream-thai-bungalow.webp" alt="Bungalow au-dessus de la mer">
-                <div class="card-body">
-                  <h5 class="card-title">Dream Thaï Bungalow</h5>
-                  <h6 class="card-title">Thaïlande</h6>
-                  <p class="card-text">2 000 m2</p>
-                  <p class="card-text">595 309€</p>
-                  <button type="button" class="btn btn-info"><a href="#">Voir</a></button>
-                </div>
-            </article>
-          </div>
+          <?php echo $meilleurs_produits ?>
         </section>
 <!-----------Section_expliquant_pourquoi_il_faut_choisir_Paradise-------------------------------------------------------------------------------------------------->
         <section class="d-flex flex-column p-5" id="choisir-paradise" aria-label="présentation des valeurs et de ce que propose Paradise">

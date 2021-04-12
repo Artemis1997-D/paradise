@@ -2,19 +2,19 @@
 include 'config/template/head.php';
 ?>
 <?php 
-$pdo = mysqli_connect("localhost", "root", "", "paradise");
+$pdo = mysqli_connect("localhost", "root", "root", "paradise");
 $contenu_produit .= '<section class="hero-produit d-flex flex-column justify-content-center align-items-center" aria-label="hero image de la fiche produit">';
  if(isset($_GET['id_produit'])) {
    $donnees = mysqli_query($pdo, "SELECT * FROM produits WHERE id_produit ='$_GET[id_produit]' ");
    while ($produit = $donnees->fetch_assoc()) {
     $contenu_produit .= '<h2 class="text-center">' . $produit["nom_produit"] . ' </h2>';
     $contenu_produit .= '<h3 class="text-center">' . $produit["localisation"] . ' </h3>';
-    $contenu_produit .= '<a class="arrow my-0 mx-auto" href="#images-produit1">
+    $contenu_produit .= '<a class="arrow my-0 mx-auto" href="#images-produit">
                           <img class="arrow" src="../paradise/asset/img/down-arrow.svg" alt="ancre vers les images mini de la fiche produit">
                           </a>
                       </section>';
     $contenu_produit .= ' <div class="content-produit d-flex flex-column  flex-wrap m-auto" aria-label="div qui contient tout le contenu avant le footer">';
-    $contenu_produit .= ' <section class="images-produit d-flex flex-row justify-content-center flex-wrap my-5 mx-auto"  aria-label="images miniatures du produit sous différents angles">';
+    $contenu_produit .= ' <section id="images-produit" class="images-produit d-flex flex-row justify-content-center flex-wrap my-5 mx-auto"  aria-label="images miniatures du produit sous différents angles">';
     $contenu_produit .= '   <div class="card-deck">
                               <article class="card">
                                 <div>

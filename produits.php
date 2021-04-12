@@ -4,7 +4,7 @@ include 'config/template/head.php';
 
 <?php
 //-------------------------------Affichage_des_catégories---------------------------------------------------------------------------------------
-  $pdo = mysqli_connect("localhost", "root", "", "paradise");
+  $pdo = mysqli_connect("localhost", "root", "root", "paradise");
   $categories_produits = mysqli_query($pdo, "SELECT DISTINCT categorie FROM produits");
   $nav_cat .= '<nav class="nav d-flex justify-content-around">';
   // pour chaque catégorie créé à partir du profil admin, un lien est créé dans la page tt les produits
@@ -18,14 +18,14 @@ include 'config/template/head.php';
   $tt_les_produits .=  '<section class="liste-produit d-flex flex-row justify-content-center flex-wrap">'; 
   if(isset($_GET['categorie'])) {
     $donnees = mysqli_query($pdo, "SELECT id_produit, photo_min1, nom_produit, localisation, superficie, prix FROM produits WHERE categorie='$_GET[categorie]' ");
-    while ($produits = $donnees->fetch_assoc()) {
+    while ($produit = $donnees->fetch_assoc()) {
       $tt_les_produits .= '<article class="produit-page-produit m-5 p-5">';
-      $tt_les_produits .= '<img class="image-produit" alt="' . $produits["nom_produit"] . '" src="' . $produits["photo_min1"] . '">';
-      $tt_les_produits .= '<h5>' . $produits["nom_produit"] . '</h5>';
-      $tt_les_produits .= '<p>' .$produits["localisation"]. '</p>';
-      $tt_les_produits .= '<p>' . $produits["superficie"] . ' m2</p>';
-      $tt_les_produits .= '<p>' . $produits["prix"] . ' €</p>';
-      $tt_les_produits .= '<button class="btn btn-info"><a href="fiche_produit.php?id_produit=' . $produits['id_produit'] . '  aria-label="lien qui mène vers le produit">Voir</a></button>';
+      $tt_les_produits .= '<img class="image-produit" alt="' . $produit["nom_produit"] . '" src="' . $produit["photo_min1"] . '">';
+      $tt_les_produits .= '<h5>' . $produit["nom_produit"] . '</h5>';
+      $tt_les_produits .= '<p>' .$produit["localisation"]. '</p>';
+      $tt_les_produits .= '<p>' . $produit["superficie"] . ' m2</p>';
+      $tt_les_produits .= '<p>' . $produit["prix"] . ' €</p>';
+      $tt_les_produits .= '<button class="btn btn-info"><a href="fiche_produit.php?id_produit=' . $produit['id_produit'] . '  aria-label="lien qui mène vers le produit">Voir</a></button>';
       $tt_les_produits .= '</article>';
     }
   }

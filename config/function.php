@@ -274,7 +274,7 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
 
  if (isset($_SESSION['user']) ) {
 // connexion à la base de données
- $pdo = mysqli_connect("localhost", "root", "", "paradise");
+ $pdo = mysqli_connect("localhost", "root", "root", "paradise");
 
 // requête sql pour avoir les infos des produits
  $resultat = mysqli_query($pdo, "SELECT id_produit, nom_produit, categorie, localisation, prix, stock  FROM produits");
@@ -427,7 +427,6 @@ function creationPanier(){
 
 creationPanier();
 
-var_dump($_SESSION['panier']);
 
 function ajouterArticle($nomProduit,$localisationProduit,$qteProduit,$prixProduit){
 
