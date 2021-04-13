@@ -1,3 +1,4 @@
+<!---------------Footer---------------------------------------------------------------------------------------------------------------------->
                 <footer class="d-flex flex-wrap justify-content-around p-4">
                     <div>
                     <a class="nav-link" href="produits.php" aria-label="lien pour accéder à la page avec tout les produits">Produits</a>

@@ -1,33 +1,35 @@
 <?php 
-include 'config/template/head.php'; 
-if(!isset($_SESSION['user']))
-{
-  header('location:login.php?access=forbidden');
-  exit();
-}
+    include 'config/template/head.php'; 
+
+    if(!isset($_SESSION['user'])){
+        header('location:login.php?access=forbidden');
+        exit();
+    }
 
 //------------Verification_admin------------------------------------------
 
-if($_SESSION['user']['statut'] == 0) {
-      header('location:profil_membre.php?connect=forbidden');
-      exit();
-} 
-
+    if($_SESSION['user']['statut'] == 0) {
+        header('location:profil_membre.php?connect=forbidden');
+        exit();
+    } 
 
 ?>
                 </header>
                 <div class="gestion-ajout d-flex flex-column justify-content-center p-2">
-                <?php echo $content; ?>
+                    <!-----------Emplacement_où_sera_affiché_un_ajout/suppression/modification_ou_connexion_de_l'admin-------------------------------------------------------------------------------------------------->
+                    <?php echo $content; ?>
                     <h2 class="text-center">Bienvenue Jacques</h2>
                         <div class="admin-profil d-flex flex-row flex-wrap justify-content-around m-4">
                             <!-----------Section_de_admin_gestion_des_articles_déjà_présents-------------------------------------------------------------------------------------------------->
                             <section class="gestion-article p-4 my-3">
                                 <h3>Gestion des produits</h3>
                                 <hr>
+                                <!-----------Emplacement_où_sera_affiché_la_liste_des_produits_enregistrés_dans_la_bdd-------------------------------------------------------------------------------------------------->
                                 <?php echo $liste_produits; ?>
                                 <h3>Modification article</h3>
                                 <hr>
-                                <!-- <?php echo $formulaire; ?> -->
+                                <!-----------Emplacement_où_sera_affiché_le_formulaire_de_modification_d'un_produit-------------------------------------------------------------------------------------------------->
+                                <?php echo $formulaire; ?> 
                             </section>
                             <br>
                             <!-----------Section_ajout_article_dans_la_liste_des_produits-------------------------------------------------------------------------------------------------->

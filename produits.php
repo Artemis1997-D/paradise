@@ -1,8 +1,6 @@
 <?php 
-include 'config/template/head.php'; 
-?>
+  include 'config/template/head.php'; 
 
-<?php
 //-------------------------------Affichage_des_catégories---------------------------------------------------------------------------------------
   $pdo = mysqli_connect("localhost", "root", "root", "paradise");
   $categories_produits = mysqli_query($pdo, "SELECT DISTINCT categorie FROM produits");
@@ -11,7 +9,7 @@ include 'config/template/head.php';
   while($cat = $categories_produits->fetch_assoc()) {
    $nav_cat .= "<a class='nav-link m-5' href='?categorie=" .$cat['categorie'] . "'>" . $cat['categorie'] . "</a>";
   }
-   $nav_cat .= '</nav>';
+  $nav_cat .= '</nav>';
 
 //-------------------------------Affichage_des_produits----------------------------------------------------------------------------------------
 // Reproduction de la maquette faite en front
@@ -44,12 +42,13 @@ include 'config/template/head.php';
 
   $tt_les_produits .= '</section>';
 
-  ?>
+?>
         </header>
         <main>
         <h2 class="text-center">Nos Produits</h2>
-        <?php echo $nav_cat ?>
-        <!-----------Liste_produits_card_deck_avec_caractéristiques------------------------------------------------------------------------->
-        <?php echo $tt_les_produits ?>
+          <!-----------Filtrage_des_produits_via_leurs_catégories------------------------------------------------------------------------->
+          <?php echo $nav_cat ?>
+          <!-----------Liste_produits_card_deck_avec_caractéristiques------------------------------------------------------------------------->
+          <?php echo $tt_les_produits ?>
         </main>
 <?php include 'config/template/footer.php'; ?>

@@ -1,21 +1,22 @@
 <?php 
 include 'config/template/head.php'; 
 
-if(!isset($_SESSION['user']))
-{
-  header('location:login.php?access=forbidden');
-  exit();
-}
-
-if($_SESSION['user']['statut'] == 1) {
-    header('location:profil_admin.php?connect=forbidden');
+    if(!isset($_SESSION['user']))
+    {
+    header('location:login.php?access=forbidden');
     exit();
-} 
+    }
 
-?>
+    if($_SESSION['user']['statut'] == 1) {
+        header('location:profil_admin.php?connect=forbidden');
+        exit();
+    } 
+
+?>           
                 </header>
                 <section class="member-profil p-5">
-                <?php echo $content; ?>
+                    <!----Emplacement_où_sera_affiché_connexion_réussie------------------------------------>
+                    <?php echo $content; ?>
                     <h2 class="text-center">Bienvenue <?= $_SESSION['user']['pseudo']; ?></h2>
                         <article class="card">
                             <h3 class="m-auto"> Vos coordonnées</h3>

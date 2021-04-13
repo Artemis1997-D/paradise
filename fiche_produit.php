@@ -1,18 +1,24 @@
 <?php
-include 'config/template/head.php';
-?>
-<?php
-$pdo = mysqli_connect("localhost", "root", "root", "paradise");
- if(isset($_GET['id_produit'])) {
-   $donnees = mysqli_query($pdo, "SELECT * FROM produits WHERE id_produit ='$_GET[id_produit]' ");
-   while ($produit = $donnees->fetch_assoc()) {
+  include 'config/template/head.php';
+
+  //Connexion à la base de données
+  $pdo = mysqli_connect("localhost", "root", "root", "paradise");
+
+  // Condition si un utilisateur cliques sur un lien ayant le id_produit correspondant
+  if(isset($_GET['id_produit'])) {
+
+    // Select toutes les lignes de la table du produit sélectionné
+    $donnees = mysqli_query($pdo, "SELECT * FROM produits WHERE id_produit ='$_GET[id_produit]' ");
+
+    // Associe chaque données aux emplacements du template ci-dessous
+    while ($produit = $donnees->fetch_assoc()) {
     $contenu_produit .= '<section class="hero-produit d-flex flex-column justify-content-center align-items-center" aria-label="hero image de la fiche produit" style="background-image: url(asset/img_produit/' . $produit["photo_hero"] . ')">';
     $contenu_produit .= '<h2 class="text-center">' . $produit["nom_produit"] . ' </h2>';
     $contenu_produit .= '<h3 class="text-center">' . $produit["localisation"] . ' </h3>';
     $contenu_produit .= '<a class="arrow my-0 mx-auto" href="#images-produit">
                           <img class="arrow" src="../paradise/asset/img/down-arrow.svg" alt="ancre vers les images mini de la fiche produit">
                           </a>
-                      </section>';
+                        </section>';
     $contenu_produit .= ' <div class="content-produit d-flex flex-column  flex-wrap m-auto" aria-label="div qui contient tout le contenu avant le footer">';
     $contenu_produit .= ' <section id="images-produit" class="images-produit d-flex flex-row justify-content-center flex-wrap my-5 mx-auto"  aria-label="images miniatures du produit sous différents angles">';
     $contenu_produit .= '   <div class="card-deck">
@@ -54,20 +60,15 @@ $pdo = mysqli_connect("localhost", "root", "root", "paradise");
                       </div>';
     $contenu_produit .= '</section>';
    }
-
-  
-
-   };
- 
- 
-
+};
 
 ?>
         </header>
         <div>
-        <?php echo $contenu_produit ?>
-             
+          <!--Emplacement_où_sera_affiché_le_contenu_de_la_page_produit------------------->
+          <?php echo $contenu_produit ?>  
         </div>
- <div>                 
-<?php include 'config/template/footer.php'; ?>
+
+<div>                 
+  <?php include 'config/template/footer.php'; ?>
 </div>

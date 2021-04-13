@@ -6,3 +6,4 @@
                     <a  class="nav-link" href="panier.php" aria-label="lien pour accéder au panier">Mon panier</a>
                     <a  class="nav-link" href="profil_membre.php" aria-label="lien pour accéder à son compte">Mon compte</a>
                 </nav>
+                

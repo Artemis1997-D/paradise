@@ -1,26 +1,26 @@
-<?php include 'config/template/head.php'; 
+<?php 
+  include 'config/template/head.php'; 
 
-if(isset($_SESSION['user'])) {
-  if($_SESSION['user']['statut'] == 1) {
-    header('location:profil_admin.php?connect=forbidden');
-    exit();
-  } else {
-    header('location:profil_membre.php?connect=forbidden');
-    exit();
-  }
-}
-
-
+  if(isset($_SESSION['user'])) {
+    if($_SESSION['user']['statut'] == 1) {
+      header('location:profil_admin.php?connect=forbidden');
+      exit();
+    } else {
+      header('location:profil_membre.php?connect=forbidden');
+      exit();
+    }
+};
 
 ?>
         </header>
-
+        
 <!-----------Hero_image_Inscription-------------------------------------------------------------------------------------------------->
         <section class="hero d-flex flex-column justify-content-center text-center" id="hero-inscription" aria-label="hero image de la page d'inscription">
-          <!-----------Form_Inscription-------------------------------------------------------------------------------------------------->
+          <!-----------Form_Inscription---------------------------------------------------------------------------------------------->
           <form class="connexion-inscription mx-auto my-5 p-5" action="" method="post">
             <h2 class="text-center mt-5 mb-5">Inscription</h2>
-            <?php echo $content; ?>
+            <!----Emplacement_où_sera_affiché_si_l'inscription_est_faite_ou_s'il_y_a_des_erreurs------------------------------------->
+              <?php echo $content; ?>
                 <div class="form-group">
                   <label for="pseudo">Pseudo</label>
                   <input type="text" class="form-control" id="pseudo" placeholder="Votre pseudo" name="pseudo" value="<?= $champPseudo; ?>"> <!-- <?= $champPseudo; ?> -->
@@ -35,11 +35,11 @@ if(isset($_SESSION['user'])) {
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Civilité</label>
-                  <select class="form-control" id="exampleFormControlSelect1" name="civilite" value="<?= $champCivilite; ?>"> <!-- <?= $champCivilite; ?> -->
-                    <option>Femme</option>
-                    <option>Homme</option>
-                    <option>Autre</option>
-                  </select>
+                    <select class="form-control" id="exampleFormControlSelect1" name="civilite" value="<?= $champCivilite; ?>"> <!-- <?= $champCivilite; ?> -->
+                      <option>Femme</option>
+                      <option>Homme</option>
+                      <option>Autre</option>
+                    </select>
                 </div>
                 <div class="form-group">
                   <label for="mdp">Mot de passe</label>
