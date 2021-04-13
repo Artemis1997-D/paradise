@@ -3,10 +3,10 @@ include 'config/template/head.php';
 ?>
 <?php
 $pdo = mysqli_connect("localhost", "root", "root", "paradise");
-$contenu_produit .= '<section class="hero-produit d-flex flex-column justify-content-center align-items-center" aria-label="hero image de la fiche produit">';
  if(isset($_GET['id_produit'])) {
    $donnees = mysqli_query($pdo, "SELECT * FROM produits WHERE id_produit ='$_GET[id_produit]' ");
    while ($produit = $donnees->fetch_assoc()) {
+    $contenu_produit .= '<section class="hero-produit d-flex flex-column justify-content-center align-items-center" aria-label="hero image de la fiche produit" style="background-image: url(asset/img_produit/' . $produit["photo_hero"] . ')">';
     $contenu_produit .= '<h2 class="text-center">' . $produit["nom_produit"] . ' </h2>';
     $contenu_produit .= '<h3 class="text-center">' . $produit["localisation"] . ' </h3>';
     $contenu_produit .= '<a class="arrow my-0 mx-auto" href="#images-produit">
@@ -18,17 +18,17 @@ $contenu_produit .= '<section class="hero-produit d-flex flex-column justify-con
     $contenu_produit .= '   <div class="card-deck">
                               <article class="card">
                                 <div>
-                                  <img class="card-img" src="$produit[photo_min1]" ">
+                                  <figure><img class="card-img" src="asset/img_produit/'. $produit["photo_min1"] . '"></figure>
                                 </div>
                               </article>
                             <article class="card">
                               <div>
-                                <img class="card-img" src="$produit[photo_min3]" ">
+                                <figure><img class="card-img" src="asset/img_produit/'. $produit["photo_min2"] . '"></figure>
                               </div>
                             </article>
                             <article class="card">
                               <div>
-                                <img class="card-img" src="$produit[photo_min3]"">
+                                <figure><img class="card-img" src="asset/img_produit/'. $produit["photo_min3"] . '"></figure>
                               </div>
                             </article>
                               </div>
@@ -52,9 +52,10 @@ $contenu_produit .= '<section class="hero-produit d-flex flex-column justify-con
                           </div>
                         </section>
                       </div>';
+    $contenu_produit .= '</section>';
    }
 
-   $contenu_produit .= '</section>';
+  
 
    };
  

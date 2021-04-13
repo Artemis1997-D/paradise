@@ -183,7 +183,7 @@ if(isset($_POST['ajouter']) && $_POST['ajouter'] == "Ajouter un produit") {
   extract($_POST);
 
   if(empty($photo_hero)) {
-    $content .= "<div class='alert alert-danger'>Aucun fichier choisi pour le hero-image</div>";
+    $content .= "<div class='alert alert-danger'>Aucune image pour le hero-image</div>";
   }
 
   if(empty($photo_min1)) {
@@ -227,8 +227,8 @@ if(isset($_POST['ajouter']) && $_POST['ajouter'] == "Ajouter un produit") {
   }
 
   if((empty($content)) || ($content == "<div class='alert alert-success'>Connexion réussie ! Vous êtes connecté en tant qu'administrateur</div>")) {
-
-    $queryInsert = "INSERT INTO `produits`(`id_produit`, `photo_hero`, `photo_min1`, `photo_min2`, `photo_min3`, `nom_produit`, `categorie`, `description`, `localisation`, `superficie`, `prix`, `stock`) VALUES (:id_produit, :photo_hero, :photo_min1, :photo_min2, :photo_min3, :nom_produit, :categorie, :description, :localisation, :superficie, :prix, :stock)";
+    
+        $queryInsert = "INSERT INTO `produits`(`id_produit`, `photo_hero`, `photo_min1`, `photo_min2`, `photo_min3`, `nom_produit`, `categorie`, `description`, `localisation`, `superficie`, `prix`, `stock`) VALUES (:id_produit, :photo_hero, :photo_min1, :photo_min2, :photo_min3, :nom_produit, :categorie, :description, :localisation, :superficie, :prix, :stock)";
 
     $reqPrep = $pdo->prepare($queryInsert);
     $reqPrep->execute(
@@ -268,7 +268,7 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
   $content .= "<div class='alert alert-success'>Produit enregistré !</div>";
  }
 
-
+     
  //------------------------Affichage_des_produits--------------------
   
 
@@ -277,7 +277,7 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
  $pdo = mysqli_connect("localhost", "root", "root", "paradise");
 
 // requête sql pour avoir les infos des produits
- $resultat = mysqli_query($pdo, "SELECT id_produit, nom_produit, categorie, localisation, prix, stock  FROM produits");
+ $resultat = mysqli_query($pdo, "SELECT id_produit, nom_produit, categorie, prix, stock  FROM produits");
 
  $liste_produits .= 'Nombre de produit(s) dans la boutique : ' . $resultat->num_rows . '<br>';
  // début du tableau permettant d'avoir la liste des produits

@@ -7,7 +7,7 @@ $donnees = mysqli_query($pdo, "SELECT id_produit, nom_produit, photo_min1, local
 
 while ($produit = $donnees->fetch_assoc()) {
   $meilleurs_produits .='<article class="card">';
-  $meilleurs_produits .= '<img class="card-img-top" alt="'. $produit["nom_produit"] .'" src="'. $produit["photo_min1"] .'">';
+  $meilleurs_produits .= '<figure><img class="card-img-top" alt="'. $produit["nom_produit"] .'" src="asset/img_produit/'. $produit["photo_min1"] .'"></figure>';
   $meilleurs_produits .= '<div class="card-body">';
   $meilleurs_produits .= '<h5 class="card-title">' . $produit['nom_produit']  . '</h5>';
   $meilleurs_produits .= '<h6 class="card-title">' .$produit['localisation'] . '</h6>';
