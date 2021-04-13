@@ -27,6 +27,7 @@ $donnees = "";
 $contenu_produit = "";
 $contenu_panier = "";
 $meilleurs_produits = "";
+$formulaire = "";
 
 $champPseudo              = $_POST['pseudo'] ?? null;
 $champPrenom              = $_POST['prenom'] ?? null;

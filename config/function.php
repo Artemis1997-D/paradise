@@ -228,7 +228,7 @@ if(isset($_POST['ajouter']) && $_POST['ajouter'] == "Ajouter un produit") {
 
   if((empty($content)) || ($content == "<div class='alert alert-success'>Connexion réussie ! Vous êtes connecté en tant qu'administrateur</div>")) {
     
-        $queryInsert = "INSERT INTO `produits`(`id_produit`, `photo_hero`, `photo_min1`, `photo_min2`, `photo_min3`, `nom_produit`, `categorie`, `description`, `localisation`, `superficie`, `prix`, `stock`) VALUES (:id_produit, :photo_hero, :photo_min1, :photo_min2, :photo_min3, :nom_produit, :categorie, :description, :localisation, :superficie, :prix, :stock)";
+        $queryInsert = "REPLACE INTO `produits`(`id_produit`, `photo_hero`, `photo_min1`, `photo_min2`, `photo_min3`, `nom_produit`, `categorie`, `description`, `localisation`, `superficie`, `prix`, `stock`) VALUES (:id_produit, :photo_hero, :photo_min1, :photo_min2, :photo_min3, :nom_produit, :categorie, :description, :localisation, :superficie, :prix, :stock)";
 
     $reqPrep = $pdo->prepare($queryInsert);
     $reqPrep->execute(
@@ -300,8 +300,8 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
        $liste_produits .= '<td class="text-center">' . $information . '</td>';
      }
      $id = $ligne['id_produit']; // Récupération de l'id du produit à modifier
-     $liste_produits .= '<td class="text-center"><a href="?modify=' . $id . '" ><img src="asset\img\edit-button.svg" width="25px" height="25px"></a></td>';
-     $liste_produits .='<td class="text-center"><a href="?action=suppression&id_produit=' . '" OnClick="return(confirm(\'En êtes vous certain ?\'));"><img src="asset\img\delete.svg" width="25px" height="25px"></a></td>';
+     $liste_produits .= '<td class="text-center"><a href="?modify&id_produit=' . $id . '" ><img src="asset\img\edit-button.svg" width="25px" height="25px"></a></td>';
+     $liste_produits .='<td class="text-center"><a href="?action=suppression&id_produit=' . $id . '" OnClick="return(confirm(\'En êtes vous certain ?\'));"><img src="asset\img\delete.svg" width="25px" height="25px"></a></td>';
    } 
      $liste_produits .='</tr></table><br>';
 } 
@@ -310,19 +310,16 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
 
 //-------------------------Suppresion_des_produits--------------------------
 
-
-
-
-  
-
-
-
-
-
+if(isset($_GET['action']) && $_GET['action'] == "suppression") {
+  $pdo = mysqli_connect("localhost", "root", "root", "paradise");
+  $resultat = mysqli_query($pdo, "SELECT *  FROM produits WHERE id_produit = $_GET[id_produit]");
+  $produit_a_supprimer = $resultat->fetch_assoc();
+  $resultat = mysqli_query($pdo, "DELETE FROM produits WHERE id_produit = $_GET[id_produit]");
+  $content .= "<div class='alert alert-success'>Produit supprimé !</div>";
+  };  
 
 
 //--------------------------Modification_des_produits----------------------
-
 
 if (isset($_GET['modify'])) {
   $produit = $_GET['modify'];
@@ -404,6 +401,9 @@ if (isset($_GET['modify'])) {
       );
 }
 }
+
+
+
 
 
 
