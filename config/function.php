@@ -301,7 +301,7 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
      }
      $id = $ligne['id_produit']; // Récupération de l'id du produit à modifier
      $liste_produits .= '<td class="text-center"><a href="?modify&id_produit=' . $id . '" ><img src="asset\img\edit-button.svg" width="25px" height="25px"></a></td>';
-     $liste_produits .='<td class="text-center"><a href="?action=suppression&id_produit=' . $id . '" OnClick="return(confirm(\'En êtes vous certain ?\'));"><img src="asset\img\delete.svg" width="25px" height="25px"></a></td>';
+     $liste_produits .='<td class="text-center"><a href="?action=delete&id_produit=' . $id . '" OnClick="return(confirm(\'En êtes vous certain ?\'));"><img src="asset\img\delete.svg" width="25px" height="25px"></a></td>';
    } 
      $liste_produits .='</tr></table><br>';
 } 
@@ -310,7 +310,7 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
 
 //-------------------------Suppresion_des_produits--------------------------
 
-if(isset($_GET['action']) && $_GET['action'] == "suppression") {
+if(isset($_GET['action']) && $_GET['action'] == "delete" && $_SESSION['user']['statut'] == 1) {
   $pdo = mysqli_connect("localhost", "root", "root", "paradise");
   $resultat = mysqli_query($pdo, "SELECT *  FROM produits WHERE id_produit = $_GET[id_produit]");
   $produit_a_supprimer = $resultat->fetch_assoc();
