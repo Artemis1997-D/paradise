@@ -93,17 +93,15 @@ if(!isset($_SESSION['user']))
     }
     ?>
 
-</header>
-        <section class="content">
-          <h2 class="text-center mt-5 mb-5">Mes commandes</h2>
-        <form method="post" action="panier.php">
-        <?php echo $contenu_panier; echo $annonce;?>
+            </header>
+            <section class="content">
+               <h2 class="text-center mt-5 mb-5">Mes commandes</h2>
+               <form method="post" action="panier.php">
+               <?php echo $contenu_panier; echo $annonce;?>
+               </form>
+            </section>
+         </main>
 
-
-
-</form>
-</section>
-</main>
 <div class="footer">
-<?php include 'config/template/footer.php'; ?>
+   <?php include 'config/template/footer.php'; ?>
 </div>

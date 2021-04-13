@@ -1,4 +1,5 @@
 <?php
+
 /*---------------------------Formulaire Inscription---------------------*/
 
 $resultat='';
@@ -97,6 +98,7 @@ if (isset($_POST['envoyer']) && $_POST['envoyer'] == "Envoyer les données") {
     exit();
   }
 }
+
 if ((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user']['statut'] == 0)) {
   $content .= "<div class='alert alert-success'>Inscription validée !</div>";
 
@@ -268,13 +270,18 @@ if((isset($_GET['register']) && $_GET['register'] == 'true') && ($_SESSION['user
   $content .= "<div class='alert alert-success'>Produit enregistré !</div>";
  }
 
-     
+// Fonction pour accéder à la base de données
+
+function connect_bdd() {
+  $pdo = mysqli_connect("localhost", "root", "", "paradise");
+}
+
  //------------------------Affichage_des_produits--------------------
   
 
  if (isset($_SESSION['user']) ) {
 // connexion à la base de données
- $pdo = mysqli_connect("localhost", "root", "", "paradise");
+  connect_bdd();
 
 // requête sql pour avoir les infos des produits
  $resultat = mysqli_query($pdo, "SELECT id_produit, nom_produit, categorie, prix, stock  FROM produits");

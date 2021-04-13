@@ -2,7 +2,7 @@
   include 'config/template/head.php';
 
   //Connexion à la base de données
-  $pdo = mysqli_connect("localhost", "root", "", "paradise");
+  $pdo = mysqli_connect("localhost", "root", "root", "paradise");
 
   // Condition si un utilisateur cliques sur un lien ayant le id_produit correspondant
   if(isset($_GET['id_produit'])) {

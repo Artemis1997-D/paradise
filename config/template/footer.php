@@ -12,9 +12,6 @@
                         <a class="nav-link" href="profil_membre.php" aria-label="lien pour accéder à son compte membre">Mon compte</a>
                         <a class="nav-link" href="panier.php" aria-label="lien pour accéder à son panier">Mon panier</a>
                     </div>
-                    <div>
-                        <a class="nav-link" href="Test.php" aria-label="lien pour accéder à la page de Test">Test</a>
-                    </div>
                 </footer>
                 <script src="asset/script/script.js"></script>
             </body>
