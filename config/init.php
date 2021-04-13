@@ -4,19 +4,19 @@
 
 define('HOSTNAME', 'localhost');
 define('USERNAME', 'root');
-define('PASSWORD', 'root'); //root pour la MAC et LINUX
+define('PASSWORD', ''); //root pour la MAC et LINUX
 define('DATABASE', 'paradise');
 
 $dsn = 'mysql:host=' . HOSTNAME . ';dbname=' . DATABASE;
 
-try { //on essaie de code...
+try { 
     $pdo = new PDO($dsn, USERNAME, PASSWORD);
 } catch (PDOException $e) { //...en cas d'erreur on la capture
     die('<ul><li>Erreur sur le fichier : ' . $e->getFile() . '</li><li>Erreur à la ligne ' . $e->getLine() . '</li><li>Message d\'erreur : ' . $e->getMessage() . '</li></ul>');
 }
 
 
-//variable d'affichage etc.
+//variables
 
 $quantite=1; 
 $content = "";
@@ -28,6 +28,8 @@ $contenu_produit = "";
 $contenu_panier = "";
 $meilleurs_produits = "";
 $formulaire = "";
+$annonce='';
+$stock= 3;
 
 $champPseudo              = $_POST['pseudo'] ?? null;
 $champPrenom              = $_POST['prenom'] ?? null;
@@ -50,7 +52,6 @@ $champSuperficieProduit   = $_POST['superficie'] ?? null;
 $champPrixProduit         = $_POST['prix'] ?? null;
 $champStockProduit        = $_POST['stock'] ?? null;
 
-//constantes systèmes
 
 require 'config/function.php';
 

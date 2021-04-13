@@ -5,7 +5,7 @@
 $meilleurs_produits .= '<div class="card-deck d-flex flex-wrap">';
 
 //Connection à la base de données
-$pdo = mysqli_connect("localhost", "root", "root", "paradise");
+$pdo = mysqli_connect("localhost", "root", "", "paradise");
 $donnees = mysqli_query($pdo, "SELECT id_produit, nom_produit, photo_min1, localisation, superficie, prix FROM produits ORDER BY id_produit DESC limit 3 ");
 
 //Permet d'associer chaque ligne de la table produits à un endroit du template ci-dessous
